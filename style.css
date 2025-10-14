@@ -1,8 +1,36 @@
 /* Style for the tab buttons */
+<style>
+  .my-button {
+    /* Spacing and Size */
+    padding: 10px 20px;
+    
+    /* Colors */
+    background-color: #007BFF; /* Blue background */
+    color: white;             /* White text */
+
+    /* Text */
+    text-align: center;
+    text-decoration: none;    /* Removes the underline */
+    display: inline-block;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+
+    /* Border and Shape */
+    border-radius: 5px;       /* Rounded corners */
+    border: none;
+    cursor: pointer;          /* Hand cursor on hover */
+  }
+
+  /* Add a hover effect */
+  .my-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+</style>
+
 .tab-buttons {
     overflow: hidden;
     border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    background-color: #0b0101;
 }
 
 .tab-buttons button {
