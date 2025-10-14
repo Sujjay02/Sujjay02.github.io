@@ -2,44 +2,117 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sujjay Karthikeyan</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Set the overall page style to a black theme */
+        body {
+            background-color: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .tabs-container {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        /* Container for the tab buttons */
+        .tab-buttons {
+            overflow: hidden;
+            border-bottom: 2px solid white; /* White line below the tabs */
+        }
+
+        /* Style for the individual tab buttons */
+        .tab-buttons button {
+            background-color: #000;      /* Black background */
+            color: white;               /* White text */
+            border: 2px solid white;    /* White outline */
+            border-bottom: none;        /* Remove bottom border to merge with the line */
+            float: left;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 20px;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+            margin-right: 5px;
+            border-radius: 8px 8px 0 0; /* Rounded top corners */
+        }
+
+        /* Style for the button when hovered over */
+        .tab-buttons button:hover {
+            background-color: white;    /* White background on hover */
+            color: black;               /* Black text on hover */
+        }
+
+        /* Style for the active/current tab button */
+        .tab-buttons button.active {
+            background-color: white;    /* White background for active tab */
+            color: black;               /* Black text for active tab */
+        }
+
+        /* Style the tab content panels */
+        .tab-content {
+            display: none; /* Hide all tabs by default */
+            padding: 20px;
+            border: 2px solid white;
+            border-top: none;
+            border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+            background-color: #1a1a1a; /* Dark gray background for content */
+        }
+    </style>
 </head>
 <body>
 
-    <h2>Sujjay Karthikeyan</h2>
+    <div class="tabs-container">
+        <!-- The Tab Buttons -->
+        <div class="tab-buttons">
+            <button class="tab-link active" onclick="openTab(event, 'Tab1')">About</button>
+            <button class="tab-link" onclick="openTab(event, 'Tab2')">Projects</button>
+            <button class="tab-link" onclick="openTab(event, 'Tab3')">Repositories</button>
+        </div>
 
-    <div class="tab-buttons">
-        <button class="tab-link active" onclick="openTab(event, 'Tab1')">About</button>
-        <button class="tab-link" onclick="openTab(event, 'Tab2')">Projects</button>
-        <button class="tab-link" onclick="openTab(event, 'Tab3')">Repositories</button>
+        <!-- The Tab Content -->
+        <div id="Tab1" class="tab-content" style="display:block;">
+            <h3>Sujjay Karthikeyan</h3>
+            <p>Hi, I'm Sujjay—a Mechanical Engineering and Physics Undergraduate Student at UNC Charlotte. driven by the challenge of designing and integrating complex systems. My interest lies the intersection of mechanical design, autonomous control, and software. My core focus is taking concepts from prototype to production, whether it's through applying ROS2 to drone swarm simulations or leading the technical design and structural analysis of a 120-pound competition robot. I am proficient in CAD/FEA (Inventor, SolidWorks) and skilled in Python, Java, and C++. I believe that great engineering starts with efficient, reusable, and reliable systems. Outside of my own projects, I am passionate about mentoring the next generation of engineers through FIRST Robotics and various outreach initiatives.</p>
+        </div>
+
+        <div id="Tab2" class="tab-content">
+            <h3>Projects</h3>
+            <p>Here you can find user-specific information and details.</p>
+        </div>
+
+        <div id="Tab3" class="tab-content">
+            <h3>Repositories</h3>
+            <p>Adjust your preferences and settings here.</p>
+        </div>
     </div>
 
-    <div id="Tab1" class="tab-content" style="display:block;">
-        <h3>Sujjay Karthikeyan</h3>
-        <p> </p>
-        <p>Hi, I'm Sujjay—a Mechanical Engineering and Physics Undergraduate Student at UNC Charlotte. driven by the challenge of designing and integrating complex systems. My interest lies the intersection of mechanical design, autonomous control, and software.
+    <script>
+        function openTab(evt, tabName) {
+            // Get all elements with class="tab-content" and hide them
+            const tabcontent = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
 
-            My core focus is taking concepts from prototype to production, whether it's through applying ROS2 to drone swarm simulations or leading the technical design and structural analysis of a 120-pound competition robot. I am proficient in CAD/FEA (Inventor, SolidWorks) and skilled in Python, Java, and C++. I believe that great engineering starts with efficient, reusable, and reliable systems.
+            // Get all elements with class="tab-link" and remove the class "active"
+            const tablinks = document.getElementsByClassName("tab-link");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
 
-            Outside of my own projects, I am passionate about mentoring the next generation of engineers through FIRST Robotics and various outreach initiatives.
-        </p>
-    </div>
-
-    <div id="Tab2" class="tab-content">
-        <h3>Projects</h3>
-        <a href="https://www.google.com" class="my-button">Go to Google</a>
-
-        <a href="about-page.html" class="my-button">About Us</a>
-        <p>Paris is the capital of France.</p> 
-    </div>
-
-    <div id="Tab3" class="tab-content">
-        <h3>Repositories</h3>
-        <p>Tokyo is the capital of Japan.</p>
-    </div>
-
-    <script src="script.js"></script>
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 
 </body>
 </html>
