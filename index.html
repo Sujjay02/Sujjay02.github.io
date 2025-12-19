@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Engineering & Design</title>
+    <title>Sujjay Karthikeyan | Engineering Portfolio</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; color: #333; background-color: #f4f4f9; }
         header { background: #1c1e21; color: #fff; padding: 3rem 0; text-align: center; }
@@ -21,32 +21,21 @@
         .social-links a:hover { background: #fff; color: #1c1e21; }
         .tag { display: inline-block; background: #eee; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; margin-right: 5px; color: #555; }
         ul.skills-list { columns: 2; -webkit-columns: 2; -moz-columns: 2; list-style-type: square; }
-        project-link {
-            display: inline-block;
-            margin-top: 10px;
-            background-color: #0366d6;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            font-size: 0.9rem;
-        }
-        .project-link:hover {
-            background-color: #024ea4;
-            color: white;
-            text-decoration: none;
-        }
+        .project-link { display: inline-block; margin-top: 10px; background-color: #0366d6; color: white; padding: 8px 15px; border-radius: 5px; font-size: 0.9rem; }
+        .project-link:hover { background-color: #024ea4; color: white; text-decoration: none; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>[Sujjay Karthikeyan]</h1> 
-        <p class="subtitle">Engineering Student | Robotics Enthusiast | Developer</p>
+        <h1>Sujjay Karthikeyan</h1> 
+        <p class="subtitle">Mechanical Engineering & Physics Student | Researcher @ SmartNet Lab</p>
         
         <div class="social-links">
             <a href="https://github.com/Sujjay02">GitHub</a>
-            <a href="https://linkedin.com/in/sujjay-karthikeyan">LinkedIn</a>
+            <a href="https://linkedin.com/in/Sujjay-Karthikeyan">LinkedIn</a>
             <a href="mailto:sujjaykarthikeyan@gmail.com">Contact Me</a>
+            <a href="resume.pdf">Download Resume</a>
         </div>
     </header>
 
@@ -54,14 +43,12 @@
         <section id="about">
             <h2>About Me</h2>
             <p>
-                I am an aspiring engineer with a strong foundation in <strong>Mathematics, Physics, and Mechanics</strong>. 
-                My passion lies in bridging the gap between theoretical principles—like thermodynamics and calculus—and practical application 
-                in robotics and aerospace design.
+                [cite_start]I am a Mechanical Engineering and Physics student at the <strong>University of North Carolina at Charlotte</strong>[cite: 29, 30]. 
+                [cite_start]Currently, I work as a Research Assistant at the <strong>SmartNet Lab</strong>, where I develop high-fidelity simulation environments for autonomous drone swarms[cite: 10, 11, 13].
             </p>
             <p>
-                Based in Morrisville, NC, I actively pursue projects that solve real-world logistical problems, 
-                from local optimization software to autonomous aerial vehicle design. I am currently expanding my linguistic 
-                capabilities in French and seeking internship opportunities in robotics and engineering.
+                [cite_start]My experience ranges from directing non-profits like <strong>InspireNC</strong> (raising $35k+) to serving as an <strong>Autodesk Design & Make Ambassador</strong>[cite: 17, 26]. 
+                I am passionate about integrating AI with engineering design and solving complex aerodynamic challenges.
             </p>
         </section>
 
@@ -69,56 +56,59 @@
             <h2>Featured Projects</h2>
             
             <div class="project">
-                <h3>VTOL Drone Development</h3>
+                <h3>Autonomous Tilt-Rotor VTOL UAV</h3>
                 <div>
-                    <span class="tag">Aerodynamics</span>
-                    <span class="tag">Engineering Design</span>
+                    <span class="tag">DFAM</span>
+                    <span class="tag">Aerospace Structures</span>
+                    <span class="tag">Carbon Fiber</span>
                 </div>
                 <p>
-                    Designing a Vertical Take-Off and Landing (VTOL) unmanned aerial vehicle. 
-                    I am applying principles of vector mechanics to ensure stable flight transitions.
+                    Engineered a custom 2-axis tilt-rotor mechanism capable of 90-degree transitions. 
+                    [cite_start]Optimized the airframe for Design for Additive Manufacturing (DFAM) to ensure successful FDM printing of thin-walled components[cite: 41, 42].
                 </p>
-                <a href="vtol.html" class="project-link">Read Case Study &rarr;</a>
+                <a href="vtol.html" class="project-link">Read Technical Case Study &rarr;</a>
+            </div>
+
+            <div class="project">
+                <h3>Forge: AI-Powered 3D Design Platform</h3>
+                <div>
+                    <span class="tag">Google Gemini API</span>
+                    <span class="tag">WebGL/Three.js</span>
+                    <span class="tag">React/Tailwind</span>
+                </div>
+                <p>
+                    A browser-based CAD application that generates editable 3D models from natural language prompts. 
+                    [cite_start]Includes a custom module to export browser-generated geometry into manufacturing-ready STL files[cite: 45].
+                </p>
+                <a href="forge.html" class="project-link">View Project Details &rarr;</a>
             </div>
 
             <div class="project">
                 <h3>Laundry Optimizer App</h3>
                 <div>
-                    <span class="tag">Software Development</span>
+                    <span class="tag">Python</span>
                     <span class="tag">Optimization Algorithms</span>
                 </div>
                 <p>
-                    Developed a functional application designed to optimize laundry scheduling for residents in Morrisville, NC to reduce wait times.
+                    Developed a functional application designed to optimize laundry scheduling for residents in Morrisville, NC to reduce wait times and machine contention.
                 </p>
                 <a href="laundry.html" class="project-link">View Project Details &rarr;</a>
-            </div>
-
-            <div class="project">
-                <h3>Disposable Heavy-Lift Glider</h3>
-                <div>
-                    <span class="tag">Concept Design</span>
-                    <span class="tag">Physics</span>
-                </div>
-                <p>
-                    A conceptual design for a low-cost, disposable glider capable of heavy-lift operations for logistics and aid.
-                </p>
-                <a href="glider.html" class="project-link">Read Case Study &rarr;</a>
             </div>
         </section>
 
         <section id="skills">
-            <h2>Technical Skills & Interests</h2>
+            <h2>Technical Skills</h2>
             <ul class="skills-list">
-                <li><strong>Mathematics:</strong> Calculus, Linear Algebra, Set Theory</li>
-                <li><strong>Physics:</strong> Thermodynamics, Statics, Vector Mechanics</li>
-                <li><strong>Development:</strong> Python (Optimization logic), App Development</li>
-                <li><strong>Languages:</strong> English, French (Conversational goal)</li>
+                [cite_start]<li><strong>Languages:</strong> C++, Python, Java, Linux (Ubuntu), AWS [cite: 5]</li>
+                [cite_start]<li><strong>Robotics & AI:</strong> ROS2 (Jazzy), Gazebo Harmonic, OpenCV, SLAM [cite: 9, 13]</li>
+                [cite_start]<li><strong>Engineering Software:</strong> MATLAB, Simulink, SolidWorks, Autodesk Inventor, Creo [cite: 5, 9]</li>
+                [cite_start]<li><strong>Certifications:</strong> Autodesk Inventor & AutoCAD Certified User [cite: 34, 35]</li>
             </ul>
         </section>
     </div>
 
     <footer style="text-align: center; padding: 20px; font-size: 0.8rem; color: #666;">
-        <p>&copy; 2025 [Your Name]. Hosted on GitHub Pages.</p>
+        <p>&copy; 2025 Sujjay Karthikeyan. Hosted on GitHub Pages.</p>
     </footer>
 
 </body>
