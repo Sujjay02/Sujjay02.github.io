@@ -21,18 +21,32 @@
         .social-links a:hover { background: #fff; color: #1c1e21; }
         .tag { display: inline-block; background: #eee; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; margin-right: 5px; color: #555; }
         ul.skills-list { columns: 2; -webkit-columns: 2; -moz-columns: 2; list-style-type: square; }
+        project-link {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #0366d6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        .project-link:hover {
+            background-color: #024ea4;
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>[Your Name Here]</h1> 
+        <h1>[Sujjay Karthikeyan]</h1> 
         <p class="subtitle">Engineering Student | Robotics Enthusiast | Developer</p>
         
         <div class="social-links">
-            <a href="https://github.com/yourusername">GitHub</a>
-            <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
-            <a href="mailto:youremail@example.com">Contact Me</a>
+            <a href="https://github.com/Sujjay02">GitHub</a>
+            <a href="https://linkedin.com/in/sujjay-karthikeyan">LinkedIn</a>
+            <a href="mailto:sujjaykarthikeyan@gmail.com">Contact Me</a>
         </div>
     </header>
 
@@ -59,13 +73,12 @@
                 <div>
                     <span class="tag">Aerodynamics</span>
                     <span class="tag">Engineering Design</span>
-                    <span class="tag">Vector Mechanics</span>
                 </div>
                 <p>
                     Designing a Vertical Take-Off and Landing (VTOL) unmanned aerial vehicle. 
-                    This project involves complex calculations regarding thrust-to-weight ratios and stability, applying principles of 
-                    vector mechanics and statics to ensure stable flight transitions.
+                    I am applying principles of vector mechanics to ensure stable flight transitions.
                 </p>
+                <a href="vtol.html" class="project-link">Read Case Study &rarr;</a>
             </div>
 
             <div class="project">
@@ -73,25 +86,23 @@
                 <div>
                     <span class="tag">Software Development</span>
                     <span class="tag">Optimization Algorithms</span>
-                    <span class="tag">Local Solutions</span>
                 </div>
                 <p>
-                    Developed a functional application designed to optimize laundry scheduling for residents in Morrisville, NC. 
-                    The program analyzes timing and resource availability to maximize efficiency and reduce wait times for users.
+                    Developed a functional application designed to optimize laundry scheduling for residents in Morrisville, NC to reduce wait times.
                 </p>
-                </div>
+                <a href="laundry.html" class="project-link">View Project Details &rarr;</a>
+            </div>
 
             <div class="project">
                 <h3>Disposable Heavy-Lift Glider</h3>
                 <div>
                     <span class="tag">Concept Design</span>
-                    <span class="tag">Startup Concept</span>
                     <span class="tag">Physics</span>
                 </div>
                 <p>
-                    Developed a conceptual design for a low-cost, disposable glider capable of heavy-lift operations. 
-                    Focused on structural integrity and cost-efficiency for potential logistics and humanitarian aid applications.
+                    A conceptual design for a low-cost, disposable glider capable of heavy-lift operations for logistics and aid.
                 </p>
+                <a href="glider.html" class="project-link">Read Case Study &rarr;</a>
             </div>
         </section>
 
