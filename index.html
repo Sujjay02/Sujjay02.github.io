@@ -3,253 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sujjay Karthikeyan | Developer</title>
+    <title>Portfolio | Engineering & Design</title>
     <style>
-        /* Professional Dark Theme */
-        :root {
-            --bg-color: #121212;
-            --card-bg: #1e1e1e;
-            --text-primary: #e0e0e0;
-            --text-secondary: #a0a0a0;
-            --accent-color: #4daafc;
-            --border-color: #333;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .tabs-container {
-            width: 100%;
-            max-width: 700px;
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Profile Header */
-        .profile-header {
-            padding: 40px 20px;
-            text-align: center;
-            background: linear-gradient(180deg, #252526 0%, #1e1e1e 100%);
-            border-bottom: 1px solid var(--border-color);
-        }
-        .profile-header h1 {
-            margin: 0;
-            color: var(--text-primary);
-            font-size: 2.2em;
-        }
-        .subtitle {
-            color: var(--accent-color);
-            margin: 10px 0 20px;
-            font-size: 1.1em;
-        }
-        .social-links a {
-            color: var(--text-secondary);
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 0.9em;
-            transition: color 0.3s;
-        }
-        .social-links a:hover {
-            color: var(--text-primary);
-        }
-
-        /* Tab Header */
-        .tab-buttons {
-            display: flex;
-            background-color: var(--card-bg);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .tab-buttons button {
-            flex: 1;
-            background-color: transparent;
-            color: var(--text-secondary);
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 16px;
-            font-size: 16px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border-bottom: 3px solid transparent;
-        }
-
-        .tab-buttons button:hover {
-            background-color: rgba(255,255,255,0.05);
-            color: var(--text-primary);
-        }
-
-        .tab-buttons button.active {
-            color: var(--accent-color);
-            border-bottom: 3px solid var(--accent-color);
-            background-color: var(--card-bg);
-        }
-
-        /* Content */
-        .tab-content {
-            display: none;
-            padding: 30px;
-            line-height: 1.6;
-            animation: fadeIn 0.4s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        h3 {
-            margin-top: 0;
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        p {
-            color: var(--text-secondary);
-            margin-bottom: 15px;
-        }
-
-        /* Project Grid */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 10px;
-        }
-        .project-card {
-            background-color: rgba(255,255,255,0.03);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-        }
-        .project-card h4 {
-            margin-top: 0;
-            color: var(--text-primary);
-        }
-        .tag {
-            display: inline-block;
-            background-color: rgba(77, 170, 252, 0.1);
-            color: var(--accent-color);
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            margin-right: 5px;
-            margin-top: 10px;
-        }
-
-        /* Contact Button */
-        .contact-btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: #121212;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 10px;
-            transition: opacity 0.3s;
-        }
-        .contact-btn:hover {
-            opacity: 0.9;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-            .tab-buttons button {
-                padding: 12px 5px;
-                font-size: 14px;
-            }
-            .tab-content {
-                padding: 20px;
-            }
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; color: #333; background-color: #f4f4f9; }
+        header { background: #1c1e21; color: #fff; padding: 3rem 0; text-align: center; }
+        .container { max-width: 900px; margin: auto; padding: 20px; background: white; margin-top: -30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { margin: 0; font-size: 2.5rem; }
+        .subtitle { font-size: 1.2rem; color: #aaa; margin-top: 10px; }
+        h2 { border-bottom: 3px solid #0366d6; padding-bottom: 10px; margin-top: 40px; color: #1c1e21; }
+        .project { background: #fff; padding: 20px; margin-bottom: 25px; border: 1px solid #ddd; border-left: 5px solid #0366d6; border-radius: 4px; transition: transform 0.2s; }
+        .project:hover { transform: translateX(5px); }
+        .project h3 { margin-top: 0; color: #0366d6; }
+        a { color: #0366d6; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+        .social-links { margin-top: 20px; }
+        .social-links a { margin: 0 15px; color: #fff; text-decoration: none; font-size: 1.1rem; border: 1px solid #fff; padding: 8px 16px; border-radius: 20px; transition: background 0.3s; }
+        .social-links a:hover { background: #fff; color: #1c1e21; }
+        .tag { display: inline-block; background: #eee; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; margin-right: 5px; color: #555; }
+        ul.skills-list { columns: 2; -webkit-columns: 2; -moz-columns: 2; list-style-type: square; }
     </style>
 </head>
 <body>
 
-    <div class="tabs-container">
-        <!-- The Tab Buttons -->
-        <div class="tab-buttons">
-            <button class="tab-link active" onclick="openTab(event, 'Tab1')">About</button>
-            <button class="tab-link" onclick="openTab(event, 'Tab2')">Projects</button>
-            <button class="tab-link" onclick="openTab(event, 'Tab3')">Repositories</button>
+    <header>
+        <h1>[Your Name Here]</h1> 
+        <p class="subtitle">Engineering Student | Robotics Enthusiast | Developer</p>
+        
+        <div class="social-links">
+            <a href="https://github.com/yourusername">GitHub</a>
+            <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+            <a href="mailto:youremail@example.com">Contact Me</a>
         </div>
+    </header>
 
-        <!-- The Tab Content -->
-        <div id="Tab1" class="tab-content" style="display:block;">
-            <h3>Sujjay Karthikeyan</h3>
-            <p>Hi, I'm Sujjay—a Mechanical Engineering and Physics Undergraduate Student at UNC Charlotte. driven by the challenge of designing and integrating complex systems. My interest lies the intersection of mechanical design, autonomous control, and software. My core focus is taking concepts from prototype to production, whether it's through applying ROS2 to drone swarm simulations or leading the technical design and structural analysis of a 120-pound competition robot. I am proficient in CAD/FEA (Inventor, SolidWorks) and skilled in Python, Java, and C++. I believe that great engineering starts with efficient, reusable, and reliable systems. Outside of my own projects, I am passionate about mentoring the next generation of engineers through FIRST Robotics and various outreach initiatives.</p>
-        </div>
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I am an aspiring engineer with a strong foundation in <strong>Mathematics, Physics, and Mechanics</strong>. 
+                My passion lies in bridging the gap between theoretical principles—like thermodynamics and calculus—and practical application 
+                in robotics and aerospace design.
+            </p>
+            <p>
+                Based in Morrisville, NC, I actively pursue projects that solve real-world logistical problems, 
+                from local optimization software to autonomous aerial vehicle design. I am currently expanding my linguistic 
+                capabilities in French and seeking internship opportunities in robotics and engineering.
+            </p>
+        </section>
 
-        <div id="Tab2" class="tab-content">
-            <h3>Projects</h3>
-            <p>Here you can find user-specific information and details.</p>
-        </div>
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            
+            <div class="project">
+                <h3>VTOL Drone Development</h3>
+                <div>
+                    <span class="tag">Aerodynamics</span>
+                    <span class="tag">Engineering Design</span>
+                    <span class="tag">Vector Mechanics</span>
+                </div>
+                <p>
+                    Designing a Vertical Take-Off and Landing (VTOL) unmanned aerial vehicle. 
+                    This project involves complex calculations regarding thrust-to-weight ratios and stability, applying principles of 
+                    vector mechanics and statics to ensure stable flight transitions.
+                </p>
+            </div>
 
-        <div id="Tab3" class="tab-content">
-            <h3>Repositories</h3>
-            <ul class="repo-list">
-                <li>
-                    <h4>Sweeping Generator</h4>
-                    <p>A web application for team collaboration. [JavaScript]</p>
-                </li>
-                <li>
-                    <h4>Data-Visualizer</h4>
-                    <p>A Python library for creating interactive charts. [Python]</p>
-                </li>
-                 <li>
-                    <h4><a href="https://www.google.com">Sujjay02.github.io</a></h4>
-                    <p>Source code for my personal portfolio website. [HTML/CSS]</p>
-                </li>
-                <li>
-                    <h4><a href="https://www.google.com">Weather App</a></h4>
-                    <p>An API-based weather web app based on custom location. [Python]</p>
-                </li>
+            <div class="project">
+                <h3>Laundry Optimizer App</h3>
+                <div>
+                    <span class="tag">Software Development</span>
+                    <span class="tag">Optimization Algorithms</span>
+                    <span class="tag">Local Solutions</span>
+                </div>
+                <p>
+                    Developed a functional application designed to optimize laundry scheduling for residents in Morrisville, NC. 
+                    The program analyzes timing and resource availability to maximize efficiency and reduce wait times for users.
+                </p>
+                </div>
+
+            <div class="project">
+                <h3>Disposable Heavy-Lift Glider</h3>
+                <div>
+                    <span class="tag">Concept Design</span>
+                    <span class="tag">Startup Concept</span>
+                    <span class="tag">Physics</span>
+                </div>
+                <p>
+                    Developed a conceptual design for a low-cost, disposable glider capable of heavy-lift operations. 
+                    Focused on structural integrity and cost-efficiency for potential logistics and humanitarian aid applications.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills & Interests</h2>
+            <ul class="skills-list">
+                <li><strong>Mathematics:</strong> Calculus, Linear Algebra, Set Theory</li>
+                <li><strong>Physics:</strong> Thermodynamics, Statics, Vector Mechanics</li>
+                <li><strong>Development:</strong> Python (Optimization logic), App Development</li>
+                <li><strong>Languages:</strong> English, French (Conversational goal)</li>
             </ul>
-        </div>
+        </section>
     </div>
 
-    <script>
-        function openTab(evt, tabName) {
-            // Get all elements with class="tab-content" and hide them
-            const tabcontent = document.getElementsByClassName("tab-content");
-            for (let i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            // Get all elements with class="tab-link" and remove the class "active"
-            const tablinks = document.getElementsByClassName("tab-link");
-            for (let i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            // Show the current tab, and add an "active" class to the button that opened the tab
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-    </script>
+    <footer style="text-align: center; padding: 20px; font-size: 0.8rem; color: #666;">
+        <p>&copy; 2025 [Your Name]. Hosted on GitHub Pages.</p>
+    </footer>
 
 </body>
 </html>
