@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0a0a0a; /* Deep dark background common in Cyd's work */
+            --bg-color: #0a0a0a;
             --text-color: #f4f4f4;
             --accent-color: #0366d6;
             --secondary-text: #888;
@@ -22,7 +22,17 @@
             scroll-behavior: smooth;
         }
 
-        /* Hero Section - Bold and Centered */
+        /* Stumpel Noise Texture */
+        .noise {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            opacity: 0.03;
+            z-index: 999;
+            background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+        }
+
+        /* Hero Section */
         header { 
             height: 100vh;
             display: flex;
@@ -34,7 +44,7 @@
         }
 
         h1 { 
-            font-size: clamp(3rem, 10vw, 8rem); /* Fluid typography */
+            font-size: clamp(3rem, 10vw, 8rem);
             font-weight: 900;
             line-height: 0.9;
             margin: 0;
@@ -50,7 +60,6 @@
             text-transform: uppercase;
         }
 
-        /* Navigation Floating Links */
         .social-links { 
             position: fixed;
             bottom: 40px;
@@ -65,11 +74,11 @@
             font-size: 0.8rem; 
             opacity: 0.6;
             transition: opacity 0.3s;
+            text-transform: uppercase;
         }
 
         .social-links a:hover { opacity: 1; }
 
-        /* Main Container - No Box Shadows, Just Fluid Layout */
         .container { 
             max-width: 1200px; 
             margin: auto; 
@@ -79,14 +88,15 @@
         h2 { 
             font-size: 3rem;
             margin-bottom: 50px;
-            border: none; /* Removed the line to look more "Creative" */
+            text-transform: uppercase;
+            font-weight: 900;
         }
 
-        /* Project Cards - Transparent and Interactive */
+        /* Work Section */
         .project { 
             position: relative;
             padding: 60px 0; 
-            border-bottom: 1px solid #222; /* Clean separators instead of boxes */
+            border-bottom: 1px solid #222; 
             transition: 0.4s ease-in-out;
             cursor: pointer;
         }
@@ -100,6 +110,7 @@
             font-size: 2.5rem;
             margin: 0;
             color: var(--text-color); 
+            text-transform: uppercase;
         }
 
         .project p {
@@ -118,71 +129,44 @@
             margin-right: 10px;
         }
 
-        /* Skill List - Minimalist Grid */
-        ul.skills-list { 
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            list-style: none;
-            padding: 0;
-        }
-
-        .skills-list li {
-            padding: 15px 0;
-            border-top: 1px solid #222;
-            color: var(--secondary-text);
-        }
-
-        /* Cyd Stumpel often uses custom cursors or noise textures */
-        .noise {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none;
-            opacity: 0.03;
-            z-index: 999;
-            background-image: url('https://grainy-gradients.vercel.app/noise.svg');
-        }
-
-        .stack-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .stack-token {
-            border: 1px solid #222;
-            padding: 15px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            transition: 0.3s;
-            cursor: default;
-        }       
-
-        .stack-token:hover {
-            border-color: var(--accent-color);
-            background: #111;
-        }
-
-        .token-title {
+        /* Interactive Toolkit */
+        .skills-category { margin-bottom: 60px; }
+        .category-title {
             font-size: 0.8rem;
-            font-weight: 700;
+            font-weight: 900;
             text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--secondary-text);
+            margin-bottom: 25px;
             display: block;
         }
 
-        .token-detail {
-            font-size: 0.7rem;
-            color: var(--accent-color);
-            opacity: 0;
-            transform: translateY(10px);
-            transition: 0.3s;
-            display: block;
+        .token-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1px;
+            background: #222;
+            border: 1px solid #222;
         }
 
-        .stack-token:hover .token-detail {
-            opacity: 1;
-            transform: translateY(0);
+        .token {
+            background: var(--bg-color);
+            padding: 30px 20px;
+            text-align: center;
+            transition: 0.3s ease;
+        }
+
+        .token:hover { background: #111; color: var(--accent-color); }
+        .token span { font-size: 0.9rem; font-weight: 700; text-transform: uppercase; }
+
+        footer {
+            padding: 100px 20px;
+            text-align: center;
+            border-top: 1px solid #222;
+            font-size: 0.8rem;
+            color: var(--secondary-text);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
     </style>
 </head>
@@ -195,9 +179,10 @@
         <p class="subtitle">Mechanical Engineering & Physics | SmartNet Lab Researcher</p>
         
         <div class="social-links">
-            <a href="https://github.com/Sujjay02">GH</a>
-            <a href="https://www.linkedin.com/in/sujjay-karthikeyan-b058a8223/">LI</a>
+            <a href="https://github.com/Sujjay02">GitHub</a>
+            <a href="https://www.linkedin.com/in/sujjay-karthikeyan-b058a8223/">LinkedIn</a>
             <a href="mailto:sujjaykarthikeyan@gmail.com">Contact</a>
+            <a href="SK_2024_Resume (4).pdf">Resume</a>
         </div>
     </header>
 
@@ -205,60 +190,74 @@
         <section id="projects">
             <h2>Work.</h2>
             
+            <div class="project" onclick="window.location.href='drones.html'">
+                <span class="tag">Robotics & Swarms</span>
+                <h3>Autonomous Drone Swarms</h3>
+                <p>Developing high-fidelity simulation environments for resilient multi-agent UAV systems using ROS2 Jazzy[cite: 1, 22].</p>
+            </div>
+
             <div class="project" onclick="window.location.href='vtol.html'">
                 <span class="tag">Aerospace</span>
-                <h3>Autonomous VTOL UAV</h3>
-                <p>Engineering transition mechanisms for heavy-lift flight.</p>
+                <h3>Tilt-Rotor VTOL UAV</h3>
+                <p>Engineering 2-axis transition mechanisms and optimizing airframes for Design for Additive Manufacturing (DFAM)[cite: 47, 50, 51].</p>
             </div>
 
             <div class="project" onclick="window.location.href='forge.html'">
                 <span class="tag">AI + CAD</span>
                 <h3>Forge Platform</h3>
-                <p>Natural language processing for 3D generative design.</p>
-            </div>
-
-            <div class="project" onclick="window.location.href='laundry.html'">
-                <span class="tag">Algorithms</span>
-                <h3>Laundry Optimizer</h3>
-                <p>Optimizing machine contention through linear sorting logic.</p>
+                <p>AI-powered 3D design utilizing Google Gemini API for natural language intent recognition[cite: 52, 54].</p>
             </div>
 
             <div class="project" onclick="window.location.href='glider.html'">
                 <span class="tag">Aerodynamics</span>
                 <h3>Heavy-Lift Glider</h3>
-                <p>Developing a high-payload, disposable airframe for cost-efficient supply drops.</p>
-            </div>
-
-            <div class="project" onclick="window.location.href='drones.html'">
-                <span class="tag">Robotics & Swarms</span>
-                <h3>Autonomous Drone Swarms</h3>
-                <p>Programming resilient UAV swarms using ROS2 and the Multi-Robot Systems (MRS) framework[cite: 1, 5].</p>
+                <p>Concept design for disposable, cardboard-based supply drop gliders maximizing payload fraction.</p>
             </div>
         </section>
 
-        <section id="skills">
-            <h2>Tools.</h2>
-            <div class="stack-grid">
-            <div class="stack-token">
-                <span class="token-title">ROS2 Jazzy</span>
-                <span class="token-detail">Swarm Control</span>
+        <section id="skills" class="container">
+            <h2>Toolkit.</h2>
+
+            <div class="skills-category">
+                <span class="category-title">Languages & Cloud</span>
+                <div class="token-grid">
+                    <div class="token"><span>C++</span></div>
+                    <div class="token"><span>Python</span></div>
+                    <div class="token"><span>Java</span></div>
+                    <div class="token"><span>Linux (Ubuntu)</span></div>
+                    <div class="token"><span>Git</span></div>
+                    <div class="token"><span>AWS</span></div>
+                </div>
             </div>
-            <div class="stack-token">
-                <span class="token-title">Ubuntu 24.04</span>
-                <span class="token-detail">Primary OS</span>
+
+            <div class="skills-category">
+                <span class="category-title">Robotics & AI</span>
+                <div class="token-grid">
+                    <div class="token"><span>ROS2 (Jazzy)</span></div>
+                    <div class="token"><span>Gazebo Harmonic</span></div>
+                    <div class="token"><span>OpenCV</span></div>
+                    <div class="token"><span>SLAM</span></div>
+                    <div class="token"><span>Matlab</span></div>
+                    <div class="token"><span>Simulink</span></div>
+                </div>
             </div>
-            <div class="stack-token">
-                <span class="token-title">SolidWorks</span>
-                <span class="token-detail">CSWA Certified</span>
+
+            <div class="skills-category">
+                <span class="category-title">Engineering CAD</span>
+                <div class="token-grid">
+                    <div class="token"><span>SolidWorks</span></div>
+                    <div class="token"><span>Inventor</span></div>
+                    <div class="token"><span>Creo</span></div>
+                    <div class="token"><span>Onshape</span></div>
+                    <div class="token"><span>AutoCAD</span></div>
+                </div>
             </div>
-            <div class="stack-token">
-                <span class="token-title">Gemini API</span>
-                <span class="token-detail">AI CAD Pipeline</span>
-            </div>
-            </div>
-            </ul>
         </section>
     </div>
+
+    <footer>
+        &copy; 2026 Sujjay Karthikeyan — Mechanical Engineering & Physics @ UNCC [cite: 38, 39]
+    </footer>
 
 </body>
 </html>
