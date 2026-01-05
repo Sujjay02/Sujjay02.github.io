@@ -141,6 +141,49 @@
             z-index: 999;
             background-image: url('https://grainy-gradients.vercel.app/noise.svg');
         }
+
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .stack-token {
+            border: 1px solid #222;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+            cursor: default;
+        }       
+
+        .stack-token:hover {
+            border-color: var(--accent-color);
+            background: #111;
+        }
+
+        .token-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .token-detail {
+            font-size: 0.7rem;
+            color: var(--accent-color);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: 0.3s;
+            display: block;
+        }
+
+        .stack-token:hover .token-detail {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -195,11 +238,24 @@
 
         <section id="skills">
             <h2>Tools.</h2>
-            <ul class="skills-list">
-                <li>ROS2 (Jazzy) & Gazebo</li>
-                <li>Python & C++</li>
-                <li>Autodesk Inventor Certified</li>
-                <li>SolidWorks & MATLAB</li>
+            <div class="stack-grid">
+            <div class="stack-token">
+                <span class="token-title">ROS2 Jazzy</span>
+                <span class="token-detail">Swarm Control</span>
+            </div>
+            <div class="stack-token">
+                <span class="token-title">Ubuntu 24.04</span>
+                <span class="token-detail">Primary OS</span>
+            </div>
+            <div class="stack-token">
+                <span class="token-title">SolidWorks</span>
+                <span class="token-detail">CSWA Certified</span>
+            </div>
+            <div class="stack-token">
+                <span class="token-title">Gemini API</span>
+                <span class="token-detail">AI CAD Pipeline</span>
+            </div>
+            </div>
             </ul>
         </section>
     </div>
