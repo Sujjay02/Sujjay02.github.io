@@ -60,6 +60,15 @@
             text-transform: uppercase;
         }
 
+        .ambassador-badge {
+            margin-top: 15px;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
         .social-links { 
             position: fixed;
             bottom: 40px;
@@ -129,7 +138,7 @@
             margin-right: 10px;
         }
 
-        /* Interactive Toolkit */
+        /* Toolkit Section */
         .skills-category { margin-bottom: 60px; }
         .category-title {
             font-size: 0.8rem;
@@ -154,10 +163,15 @@
             padding: 30px 20px;
             text-align: center;
             transition: 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .token:hover { background: #111; color: var(--accent-color); }
         .token span { font-size: 0.9rem; font-weight: 700; text-transform: uppercase; }
+        .token svg { margin-bottom: 10px; }
 
         footer {
             padding: 100px 20px;
@@ -177,12 +191,13 @@
     <header>
         <h1>Sujjay<br>Karthikeyan</h1> 
         <p class="subtitle">Mechanical Engineering & Physics | SmartNet Lab Researcher</p>
+        <div class="ambassador-badge">Autodesk Design & Make Ambassador</div>
         
         <div class="social-links">
             <a href="https://github.com/Sujjay02">GitHub</a>
             <a href="https://www.linkedin.com/in/sujjay-karthikeyan-b058a8223/">LinkedIn</a>
             <a href="mailto:sujjaykarthikeyan@gmail.com">Contact</a>
-            <a href="SK_2024_Resume (4).pdf">Resume</a>
+            <a href="resume.pdf">Resume</a>
         </div>
     </header>
 
@@ -193,29 +208,29 @@
             <div class="project" onclick="window.location.href='drones.html'">
                 <span class="tag">Robotics & Swarms</span>
                 <h3>Autonomous Drone Swarms</h3>
-                <p>Developing high-fidelity simulation environments for resilient multi-agent UAV systems using ROS2 Jazzy.</p>
+                <p>Developing high-fidelity ROS2 Jazzy simulations for resilient, decentralized UAV swarms at SmartNet Lab.</p>
             </div>
 
             <div class="project" onclick="window.location.href='vtol.html'">
                 <span class="tag">Aerospace</span>
                 <h3>Tilt-Rotor VTOL UAV</h3>
-                <p>Engineering 2-axis transition mechanisms and optimizing airframes for Design for Additive Manufacturing (DFAM).</p>
+                <p>Designing custom 2-axis transition mechanisms and optimizing aerospace structures for FDM 3D printing.</p>
             </div>
 
             <div class="project" onclick="window.location.href='forge.html'">
                 <span class="tag">AI + CAD</span>
                 <h3>Forge Platform</h3>
-                <p>AI-powered 3D design utilizing Google Gemini API for natural language intent recognition.</p>
+                <p>Browser-based CAD application leveraging Google Gemini API for natural language to 3D geometry generation.</p>
             </div>
 
             <div class="project" onclick="window.location.href='glider.html'">
                 <span class="tag">Aerodynamics</span>
                 <h3>Heavy-Lift Glider</h3>
-                <p>Concept design for disposable, cardboard-based supply drop gliders maximizing payload fraction.</p>
+                <p>Concept design for cost-efficient, disposable supply drop gliders utilizing passive control logic.</p>
             </div>
         </section>
 
-        <section id="skills" class="container">
+        <section id="skills">
             <h2>Toolkit.</h2>
 
             <div class="skills-category">
@@ -231,9 +246,12 @@
             </div>
 
             <div class="skills-category">
-                <span class="category-title">Robotics & AI</span>
+                <span class="category-title">Robotics & Software</span>
                 <div class="token-grid">
-                    <div class="token"><span>ROS2 (Jazzy)</span></div>
+                    <div class="token">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.8l7.5 3.75L12 12.3 4.5 8.55 12 4.8zM4 15.5V9.45l7 3.5v6.05l-7-3.5zm9 3.5V12.95l7-3.5v6.05l-7 3.5z"/></svg>
+                        <span>ROS2 (Jazzy)</span>
+                    </div>
                     <div class="token"><span>Gazebo Harmonic</span></div>
                     <div class="token"><span>OpenCV</span></div>
                     <div class="token"><span>SLAM</span></div>
@@ -250,13 +268,15 @@
                     <div class="token"><span>Creo</span></div>
                     <div class="token"><span>Onshape</span></div>
                     <div class="token"><span>AutoCAD</span></div>
+                    <div class="token"><span>Arduino</span></div>
                 </div>
             </div>
         </section>
     </div>
 
     <footer>
-        &copy; 2026 Sujjay Karthikeyan — Mechanical Engineering & Physics @ UNCC 
+        &copy; 2026 Sujjay Karthikeyan — UNCC Mechanical Engineering & Physics
+    </footer>
 
 </body>
 </html>
