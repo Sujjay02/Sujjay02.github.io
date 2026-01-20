@@ -104,19 +104,24 @@
             color: var(--accent-color);
         }
 
-        /* OnShape CAD Viewer Section */
+        /* OnShape CAD Link Section */
         .cad-section { margin-top: 80px; margin-bottom: 80px; }
-        .cad-container {
-            width: 100%;
-            height: 70vh;
-            min-height: 500px;
-            border: 1px solid #222;
-            background: #0e0e0e;
-            position: relative;
-            overflow: hidden;
-            margin-top: 40px;
+        .cad-link-btn {
+            display: inline-block;
+            border: 1px solid var(--accent-color);
+            padding: 20px 40px;
+            margin-top: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
         }
-        .cad-container iframe { width: 100%; height: 100%; border: none; }
+        .cad-link-btn:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+        }
 
         /* Grainy Texture Overlay */
         .noise {
@@ -151,13 +156,11 @@
 
         <section class="cad-section">
             <h2>3D CAD Model</h2>
-            <p>Interactive CAD model of the VTOL UAV design. Rotate, zoom, and explore the engineering details.</p>
-            <div class="cad-container">
-                <iframe src="https://cad.onshape.com/documents/926c6a7bf9e6feb3c52c350e/w/9545e494e594908f64a9f086/e/437dbbae9c5ee170a9947ff4?renderMode=0&uiState=6970027bf1d378b62466902a"
-                        allowfullscreen
-                        allow="autoplay; fullscreen; xr-spatial-tracking">
-                </iframe>
-            </div>
+            <p>Interactive CAD model of the VTOL UAV design. View in OnShape to rotate, zoom, and explore the engineering details.</p>
+            <a href="https://cad.onshape.com/documents/926c6a7bf9e6feb3c52c350e/w/9545e494e594908f64a9f086/e/437dbbae9c5ee170a9947ff4?renderMode=0&uiState=6970027bf1d378b62466902a"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="cad-link-btn">View 3D Model in OnShape →</a>
         </section>
 
         <div class="tech-stack">
