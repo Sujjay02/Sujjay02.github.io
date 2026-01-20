@@ -17,15 +17,6 @@
         h2 { font-size: 3rem; font-weight: 900; margin-bottom: 20px; text-transform: uppercase; }
         .spec { display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid #ddd; }
         .spec span:first-child { font-weight: 700; text-transform: uppercase; font-size: 0.8rem; }
-
-        /* OnShape CAD Viewer Section */
-        .cad-section { margin-top: 80px; margin-bottom: 80px; }
-        .cad-container { width: 100%; height: 70vh; min-height: 500px; border: 2px solid #000; background: #fff; position: relative; overflow: hidden; margin-top: 40px; }
-        .cad-container iframe { width: 100%; height: 100%; border: none; }
-        .cad-placeholder { padding: 60px; text-align: center; background: #fafafa; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-        .cad-placeholder h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 20px; }
-        .cad-placeholder p { color: var(--dim); max-width: 500px; line-height: 1.6; }
-        .cad-placeholder code { background: #e0e0e0; padding: 2px 8px; border-radius: 3px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -43,29 +34,6 @@
         <div class="spec"><span>Payload Fraction</span><span>Maximizing aid capacity</span></div>
         <div class="spec"><span>Aerodynamics</span><span>High-lift, low-speed wing profiles</span></div>
         <div class="spec"><span>Simplicity</span><span>Passive control surfaces</span></div>
-
-        <section class="cad-section">
-            <h2>3D Model.</h2>
-            <p>Interactive CAD model of the glider design. Rotate, zoom, and explore the engineering details.</p>
-            <div class="cad-container">
-                <iframe src="https://cad.onshape.com/documents/926c6a7bf9e6feb3c52c350e/w/9545e494e594908f64a9f086/e/437dbbae9c5ee170a9947ff4?renderMode=0&uiState=697000f6f1d378b624664abd"
-                        allowfullscreen
-                        allow="autoplay; fullscreen; xr-spatial-tracking">
-                </iframe>
-
-                <!-- Alternative: If you don't have the URL yet, this placeholder will show -->
-                <!--
-                <div class="cad-placeholder">
-                    <h3>OnShape CAD Viewer</h3>
-                    <p>To embed your glider model:</p>
-                    <p>1. Open your document in OnShape<br>
-                       2. Click <strong>Share</strong> → <strong>Embed</strong><br>
-                       3. Copy the iframe URL<br>
-                       4. Replace <code>YOUR_ONSHAPE_EMBED_URL_HERE</code> with your URL</p>
-                </div>
-                -->
-            </div>
-        </section>
     </div>
 </body>
 </html>

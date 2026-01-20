@@ -104,6 +104,20 @@
             color: var(--accent-color);
         }
 
+        /* OnShape CAD Viewer Section */
+        .cad-section { margin-top: 80px; margin-bottom: 80px; }
+        .cad-container {
+            width: 100%;
+            height: 70vh;
+            min-height: 500px;
+            border: 1px solid #222;
+            background: #0e0e0e;
+            position: relative;
+            overflow: hidden;
+            margin-top: 40px;
+        }
+        .cad-container iframe { width: 100%; height: 100%; border: none; }
+
         /* Grainy Texture Overlay */
         .noise {
             position: fixed;
@@ -133,6 +147,17 @@
         <section>
             <h2>Technical Implementation</h2>
             <p>I utilized ROS2 and Gazebo to simulate flight characteristics and validate stability.</p>
+        </section>
+
+        <section class="cad-section">
+            <h2>3D CAD Model</h2>
+            <p>Interactive CAD model of the VTOL UAV design. Rotate, zoom, and explore the engineering details.</p>
+            <div class="cad-container">
+                <iframe src="https://cad.onshape.com/documents/926c6a7bf9e6feb3c52c350e/w/9545e494e594908f64a9f086/e/437dbbae9c5ee170a9947ff4?renderMode=0&uiState=697000f6f1d378b624664abd"
+                        allowfullscreen
+                        allow="autoplay; fullscreen; xr-spatial-tracking">
+                </iframe>
+            </div>
         </section>
 
         <div class="tech-stack">
