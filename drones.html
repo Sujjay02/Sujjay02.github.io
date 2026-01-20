@@ -39,6 +39,14 @@
         .gallery-item:hover img { filter: grayscale(0%) contrast(100%); border-color: var(--accent); }
         .caption { margin-top: 15px; font-size: 0.7rem; text-transform: uppercase; color: var(--dim); letter-spacing: 1px; border-left: 2px solid var(--accent); padding-left: 10px; }
 
+        /* Research Poster Section */
+        .poster-section { margin-top: 120px; margin-bottom: 120px; }
+        .poster-container { width: 100%; height: 80vh; min-height: 600px; border: 1px solid #222; background: #0e0e0e; position: relative; overflow: hidden; }
+        .poster-container iframe { width: 100%; height: 100%; border: none; }
+        .poster-fallback { padding: 60px; text-align: center; }
+        .poster-fallback a { color: var(--accent); text-decoration: none; border: 1px solid var(--accent); padding: 15px 40px; display: inline-block; margin-top: 20px; transition: 0.3s; }
+        .poster-fallback a:hover { background: var(--accent); color: var(--bg); }
+
         /* Callout Section */
         .future-box { margin-top: 120px; padding: 80px; background: #0e0e0e; border: 1px solid #222; position: relative; }
         .future-box h2 { color: var(--accent); margin-top: 0; }
@@ -100,6 +108,14 @@
                 </div>
             </div>
         </div>
+        </section>
+
+        <section class="poster-section">
+            <h2>Research Poster.</h2>
+            <p>Full documentation of the autonomous drone swarm project presented at UNC Charlotte Honors College.</p>
+            <div class="poster-container">
+                <iframe src="Research poster- Sujjay Karthikeyan.pptx.pdf" type="application/pdf"></iframe>
+            </div>
         </section>
 
         <section class="future-box">
