@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Sujjay Karthikeyan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #f4f4f4;
+            --accent-color: #0366d6;
+            --secondary-text: #888;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .noise {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            opacity: 0.03;
+            z-index: 999;
+            background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+        }
+
+        nav {
+            padding: 40px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .back-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover { opacity: 1; }
+
+        header {
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 60px;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 900;
+            margin: 0;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+        }
+
+        .meta {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .content-wrapper {
+            max-width: 900px;
+            margin: 100px auto;
+            padding: 0 40px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-top: 80px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            color: var(--secondary-text);
+            margin-bottom: 30px;
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: var(--text-color);
+            font-weight: 700;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+            margin-bottom: 100px;
+        }
+
+        .skill-category h3 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skill-category li {
+            padding: 12px 0;
+            border-bottom: 1px solid #222;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        .timeline {
+            margin-top: 60px;
+            border-left: 2px solid #222;
+            padding-left: 40px;
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .timeline-year {
+            font-size: 0.7rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .timeline-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin: 10px 0;
+            color: var(--text-color);
+        }
+
+        .timeline-desc {
+            color: var(--secondary-text);
+            font-size: 1.1rem;
+        }
+
+        .contact-section {
+            margin-top: 120px;
+            padding: 80px;
+            background: #0e0e0e;
+            border: 1px solid #222;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .contact-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--accent-color);
+            padding: 15px 30px;
+            transition: all 0.3s;
+        }
+
+        .contact-links a:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+        footer {
+            padding: 60px;
+            text-align: center;
+            border-top: 1px solid #222;
+            font-size: 0.8rem;
+            color: var(--secondary-text);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="noise"></div>
+    <nav><a href="index.html" class="back-link">← Home</a></nav>
+
+    <header>
+        <h1>About Me</h1>
+        <div class="meta">Engineer | Researcher | Builder</div>
+    </header>
+
+    <div class="content-wrapper">
+        <section>
+            <p>I'm a <span class="highlight">robotics engineer and researcher</span> specializing in autonomous systems, UAV design, and multi-agent coordination. Currently pursuing my studies at <span class="highlight">UNC Charlotte</span>, I work with the SmartNet Lab developing cutting-edge drone swarm technologies.</p>
+
+            <p>My work focuses on bridging the gap between <span class="highlight">simulation and reality</span> — building systems that are theoretically sound and practically deployable. From designing VTOL aircraft in CAD to programming distributed control algorithms in ROS2, I thrive at the intersection of mechanical design and intelligent software.</p>
+
+            <p>Beyond research, I'm passionate about <span class="highlight">open-source development</span> and believe in making advanced robotics accessible. Whether it's optimizing path-planning algorithms or building physical prototypes, I approach every project with a focus on elegant engineering and real-world impact.</p>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Robotics & Control</h3>
+                    <ul>
+                        <li>ROS2 (Jazzy)</li>
+                        <li>Gazebo Harmonic</li>
+                        <li>MRS UAV System</li>
+                        <li>Path Planning</li>
+                        <li>Swarm Intelligence</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>C++</li>
+                        <li>JavaScript</li>
+                        <li>Git/GitHub</li>
+                        <li>Linux/Ubuntu</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Design & CAD</h3>
+                    <ul>
+                        <li>SolidWorks</li>
+                        <li>OnShape</li>
+                        <li>FDM 3D Printing</li>
+                        <li>Carbon Fiber Composites</li>
+                        <li>Aerodynamics</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2024 - Present</div>
+                    <div class="timeline-title">SmartNet Lab Research</div>
+                    <div class="timeline-desc">Developing autonomous drone swarm systems using ROS2 and Gazebo. Pioneering multi-UAV coordination and collision avoidance algorithms.</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-title">VTOL UAV Development</div>
+                    <div class="timeline-desc">Designed and prototyped a vertical takeoff and landing UAV combining helicopter efficiency with fixed-wing performance.</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-title">UNC Charlotte Student Ambassador</div>
+                    <div class="timeline-desc">Representing the university and mentoring prospective engineering students.</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Ongoing</div>
+                    <div class="timeline-title">Supply Drop Glider Concept</div>
+                    <div class="timeline-desc">Exploring disposable, one-way humanitarian aid delivery systems using reinforced cardboard and passive aerodynamics.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2>Let's Connect</h2>
+            <p>Interested in collaboration, research opportunities, or just want to chat about robotics?</p>
+            <div class="contact-links">
+                <a href="mailto:sujjaykarthikeyan@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/sujjay-karthikeyan-b058a8223/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/Sujjay02" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="SK_2024_Resume (4).pdf" target="_blank">Resume</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2026 Sujjay Karthikeyan — Robotics Engineer & Researcher
+    </footer>
+</body>
+</html>
