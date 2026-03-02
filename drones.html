@@ -89,6 +89,10 @@
                 <h3>Control</h3>
                 <p>MRS UAV System</p>
             </div>
+            <div class="token">
+                <h3>Learning</h3>
+                <p>PyTorch DQN</p>
+            </div>
         </div>
 
         <section>
@@ -119,13 +123,56 @@
             </div>
         </section>
 
+        <section>
+            <h2>RL Coverage Optimization.</h2>
+            <p>Training reinforcement learning agents to solve multi-drone coverage — positioning 3 drones to observe all 25 target points across a 100x100m area. The problem is first abstracted in 2D, then transferred to full 3D Gazebo simulation.</p>
+
+            <div class="stack-grid">
+                <div class="token">
+                    <h3>Algorithm</h3>
+                    <p>Deep Q-Network</p>
+                </div>
+                <div class="token">
+                    <h3>Framework</h3>
+                    <p>PyTorch</p>
+                </div>
+                <div class="token">
+                    <h3>Baseline</h3>
+                    <p>Tabular Q-Learning</p>
+                </div>
+                <div class="token">
+                    <h3>Sim Bridge</h3>
+                    <p>Gazebo SDF World</p>
+                </div>
+            </div>
+
+            <div class="gallery-grid" style="margin-bottom: 80px;">
+                <div class="gallery-item">
+                    <div class="caption">
+                        03. 2D Coverage Abstraction
+                    <br><small>25 dots on a 5x5 grid — disks represent drone coverage footprints (r=1.2)</small>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="caption">
+                        04. DQN Training Pipeline
+                    <br><small>Experience replay, target network updates, epsilon-greedy exploration with decay</small>
+                    </div>
+                </div>
+            </div>
+
+            <p>The DQN agent uses a 4-layer fully connected network (4 → 64 → 64 → 64 → 25) with experience replay and a target network updated every 1,000 steps. The companion DiscWorld repo generates Gazebo SDF worlds with 25 cylindrical targets for sim-to-real transfer.</p>
+        </section>
+
         <section class="future-box">
             <h2>Roadmap.</h2>
-            <p>Current development is focused on scaling collision avoidance and implementing advanced path planning for dense environments.</p>
+            <p>Scaling from 2D RL prototypes to full 3D drone coordination in Gazebo, with the goal of deploying learned coverage policies on multi-UAV systems.</p>
             <div class="tag-list">
+                <span>Reinforcement Learning</span>
+                <span>Deep Q-Networks</span>
+                <span>Coverage Optimization</span>
                 <span>Collision Avoidance</span>
-                <span>Path Planning</span>
-                <span>Swarm Intelligence</span>
+                <span>Sim-to-Real Transfer</span>
                 <span>Multi-Robot Systems</span>
             </div>
         </section>
