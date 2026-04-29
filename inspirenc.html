@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InspireNC | Sujjay Karthikeyan</title>
+    <meta property="og:title" content="InspireNC | Sujjay Karthikeyan">
+    <meta property="og:description" content="Director of InspireNC — a student-led nonprofit building STEM pathways in North Carolina, with partnerships with the US Air Force, MetLife, and Lenovo.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sujjay02.github.io/inspirenc.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="InspireNC | Sujjay Karthikeyan">
+    <meta name="twitter:description" content="Director of InspireNC — a student-led nonprofit with partnerships with the US Air Force, MetLife, and Lenovo.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230a0a0a' width='100' height='100'/%3E%3Ctext x='50' y='75' font-family='Inter, sans-serif' font-size='70' font-weight='900' fill='%230366d6' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #0a0a0a; --text: #f4f4f4; --accent: #6366f1; --dim: #888; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); margin: 0; line-height: 1.6; overflow-x: hidden; }
+
+        .noise { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.03; z-index: 999; background-image: url('https://grainy-gradients.vercel.app/noise.svg'); }
+
+        nav { padding: 40px; position: fixed; top: 0; width: 100%; z-index: 100; mix-blend-mode: difference; }
+        .back { color: var(--text); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.5; transition: 0.3s; }
+        .back:hover { opacity: 1; }
+
+        header {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 60px;
+            border-bottom: 1px solid #222;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle institutional grid — evokes org charts, networks, community */
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+            background-size: 100px 100px;
+            pointer-events: none;
+        }
+
+        .accent-bar { width: 60px; height: 3px; background: var(--accent); margin-bottom: 30px; }
+        h1 { font-size: clamp(3rem, 9vw, 7rem); font-weight: 900; margin: 0; line-height: 0.9; text-transform: uppercase; letter-spacing: -2px; }
+        .tagline { font-size: 1.2rem; color: var(--dim); margin-top: 20px; max-width: 580px; }
+        .meta { margin-top: 15px; font-size: 0.9rem; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; }
+
+        .content { max-width: 1100px; margin: 100px auto; padding: 0 40px; }
+        h2 { font-size: 3rem; font-weight: 900; margin-bottom: 40px; text-transform: uppercase; letter-spacing: -1px; }
+        p { font-size: 1.3rem; color: var(--dim); margin-bottom: 50px; max-width: 800px; }
+
+        /* Partner logos — text-based, institutional */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1px;
+            background: #222;
+            border: 1px solid #222;
+            margin-bottom: 100px;
+        }
+        .partner-cell {
+            background: var(--bg);
+            padding: 50px 30px;
+            text-align: center;
+            transition: 0.4s;
+        }
+        .partner-cell:hover { background: #0d0d0d; }
+        .partner-name { font-size: 1.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: -1px; color: var(--text); margin-bottom: 8px; }
+        .partner-type { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); font-weight: 700; }
+
+        .features { margin-bottom: 100px; }
+        .feature { padding: 35px 0; border-top: 1px solid #222; display: flex; gap: 40px; align-items: baseline; }
+        .feature:last-child { border-bottom: 1px solid #222; }
+        .feature-num { font-size: 0.7rem; color: var(--accent); font-weight: 700; letter-spacing: 2px; min-width: 40px; }
+        .feature strong { display: block; font-size: 1.3rem; color: var(--text); margin-bottom: 8px; }
+        .feature span { font-size: 1rem; color: var(--dim); }
+
+        /* Impact stat row */
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1px;
+            background: #222;
+            border: 1px solid #222;
+            margin-bottom: 100px;
+        }
+        .stat-cell { background: var(--bg); padding: 40px 30px; transition: 0.3s; }
+        .stat-cell:hover { background: #0d0d0d; }
+        .stat-number { font-size: 3rem; font-weight: 900; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+        .stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--dim); font-weight: 700; }
+
+        .callout-box { margin-top: 120px; padding: 80px; background: #0e0e0e; border: 1px solid #222; }
+        .callout-box h2 { color: var(--accent); margin-top: 0; }
+        .tag-list { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+        .tag-list span { font-size: 0.75rem; border: 1px solid #333; padding: 5px 15px; border-radius: 50px; color: var(--dim); }
+
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: none; }
+
+        footer { padding: 60px; text-align: center; border-top: 1px solid #222; font-size: 0.8rem; color: var(--dim); text-transform: uppercase; letter-spacing: 2px; }
+    </style>
+</head>
+<body>
+    <div class="noise"></div>
+    <nav><a href="index.html" class="back">&larr; Close</a></nav>
+
+    <header>
+        <div class="accent-bar"></div>
+        <h1>Inspire<br>NC.</h1>
+        <div class="tagline">Director of a student-led nonprofit building STEM pathways and mentorship networks across North Carolina.</div>
+        <div class="meta">Director &nbsp;|&nbsp; Student-Led Nonprofit &nbsp;|&nbsp; North Carolina</div>
+    </header>
+
+    <div class="content">
+
+        <section>
+            <h2>The Organization.</h2>
+            <p>InspireNC connects students with the resources, mentors, and industry exposure they need to pursue careers in STEM — particularly students in communities that are underrepresented in engineering and technology. As Director, I lead partnerships, outreach programming, and strategic direction.</p>
+        </section>
+
+        <section>
+            <h2>Partners.</h2>
+            <div class="partners-grid">
+                <div class="partner-cell">
+                    <div class="partner-name">US Air Force</div>
+                    <div class="partner-type">Federal / Defense</div>
+                </div>
+                <div class="partner-cell">
+                    <div class="partner-name">MetLife</div>
+                    <div class="partner-type">Corporate Partner</div>
+                </div>
+                <div class="partner-cell">
+                    <div class="partner-name">Lenovo</div>
+                    <div class="partner-type">Technology Partner</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>What I Do.</h2>
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-num">01</span>
+                    <div>
+                        <strong>Partnership Development</strong>
+                        <span>Building and maintaining relationships with institutional partners — federal agencies, corporations, and universities — to create meaningful programming and funding for student participants.</span>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-num">02</span>
+                    <div>
+                        <strong>STEM Outreach Programming</strong>
+                        <span>Designing and running events that put students in direct contact with engineers, researchers, and industry professionals. The goal is to make STEM careers feel real and reachable, not abstract.</span>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-num">03</span>
+                    <div>
+                        <strong>Strategic Direction</strong>
+                        <span>Setting organizational priorities, managing a student leadership team, and representing InspireNC in partner conversations at the institutional level — including with federal and Fortune 500 contacts.</span>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="feature-num">04</span>
+                    <div>
+                        <strong>Mentorship</strong>
+                        <span>Directly mentoring students navigating college applications, major selection, and early career decisions in engineering and technology fields.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="callout-box">
+            <h2>Why It Matters.</h2>
+            <p>The same access gap that slowed me down early — not knowing what was possible, not having contacts, not seeing people like me in the field — is what InspireNC is built to close. The partner network we've assembled (Air Force, MetLife, Lenovo) gives students a credibility signal and a room to walk into that most students don't get.</p>
+            <div class="tag-list">
+                <span>Nonprofit Leadership</span>
+                <span>STEM Outreach</span>
+                <span>Partnership Development</span>
+                <span>Mentorship</span>
+                <span>Strategic Planning</span>
+                <span>North Carolina</span>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Sujjay Karthikeyan &mdash; InspireNC
+    </footer>
+
+    <script>
+        document.querySelectorAll('section, .partners-grid, .features, .stat-row, .callout-box').forEach(el => el.classList.add('reveal'));
+        const io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }), { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    </script>
+</body>
+</html>
