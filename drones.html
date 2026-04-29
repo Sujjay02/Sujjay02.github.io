@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autonomous Drones | Sujjay Karthikeyan</title>
+    <meta property="og:title" content="Autonomous Drone Swarms | Sujjay Karthikeyan">
+    <meta property="og:description" content="Training reinforcement learning agents for multi-drone coverage optimization — from 2D Q-learning prototypes to full ROS2 Jazzy / Gazebo Harmonic simulation at SmartNet Lab.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sujjay02.github.io/drones.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Autonomous Drone Swarms | Sujjay Karthikeyan">
+    <meta name="twitter:description" content="Multi-drone coverage optimization with DQN reinforcement learning at SmartNet Lab, UNCC.">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230a0a0a' width='100' height='100'/%3E%3Ctext x='50' y='75' font-family='Inter, sans-serif' font-size='70' font-weight='900' fill='%230366d6' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap" rel="stylesheet">
     <style>
@@ -55,6 +62,14 @@
         .tag-list span { font-size: 0.75rem; border: 1px solid #333; padding: 5px 15px; border-radius: 50px; color: var(--dim); }
 
         footer { padding: 60px; text-align: center; border-top: 1px solid #222; font-size: 0.8rem; color: var(--dim); text-transform: uppercase; letter-spacing: 2px; }
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: none; }
+        .project-nav { display: flex; justify-content: space-between; align-items: center; padding: 60px 40px; border-top: 1px solid #222; max-width: 1100px; margin: 0 auto; gap: 20px; }
+        .project-nav a { color: var(--text); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.5; transition: 0.3s; display: flex; flex-direction: column; gap: 6px; }
+        .project-nav a:hover { opacity: 1; }
+        .project-nav a span { font-size: 1rem; font-weight: 700; text-transform: none; letter-spacing: 0; color: var(--text); }
+        .pn-center { opacity: 0.3 !important; }
+        .pn-next { text-align: right; }
     </style>
 </head>
 <body>
@@ -194,8 +209,18 @@
         </section>
     </div>
 
+    <nav class="project-nav">
+        <a href="laundry.html">&larr; Previous<span>Laundry Optimizer</span></a>
+        <a href="index.html" class="pn-center">All Work</a>
+        <a href="diskposition.html" class="pn-next">Next &rarr;<span>Disk Position RL</span></a>
+    </nav>
     <footer>
         &copy; 2026 Sujjay Karthikeyan — SmartNet Lab Research
     </footer>
+    <script>
+        document.querySelectorAll('section, .stack-grid, .gallery-grid, .poster-section, .future-box').forEach(el => el.classList.add('reveal'));
+        const io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }), { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    </script>
 </body>
 </html>

@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FRC 6908 Infuzed | Sujjay Karthikeyan</title>
+    <meta property="og:title" content="FRC 6908 Infuzed | Sujjay Karthikeyan">
+    <meta property="og:description" content="Four seasons of FIRST Robotics Competition — 2026 capstone as programmer and drive coach on a swerve-drive robot with CTRE Phoenix 6, Field2d pose visualization, and CANcoder diagnostics.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sujjay02.github.io/frc.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="FRC 6908 Infuzed | Sujjay Karthikeyan">
+    <meta name="twitter:description" content="2026 FRC season capstone — swerve drive, CTRE Phoenix 6, Field2d, drive coaching. Team 6908.">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230a0a0a' width='100' height='100'/%3E%3Ctext x='50' y='75' font-family='Inter, sans-serif' font-size='70' font-weight='900' fill='%230366d6' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap" rel="stylesheet">
     <style>
@@ -133,8 +140,15 @@
 
         .repo-link { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; border: 1px solid var(--accent); padding: 12px 24px; margin-top: 20px; transition: 0.3s; }
         .repo-link:hover { background: var(--accent); color: var(--bg); }
-
         footer { padding: 60px; text-align: center; border-top: 1px solid #222; font-size: 0.8rem; color: var(--dim); text-transform: uppercase; letter-spacing: 2px; }
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: none; }
+        .project-nav { display: flex; justify-content: space-between; align-items: center; padding: 60px 40px; border-top: 1px solid #222; max-width: 1100px; margin: 0 auto; gap: 20px; }
+        .project-nav a { color: var(--text); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.5; transition: 0.3s; display: flex; flex-direction: column; gap: 6px; }
+        .project-nav a:hover { opacity: 1; }
+        .project-nav a span { font-size: 1rem; font-weight: 700; text-transform: none; letter-spacing: 0; color: var(--text); }
+        .pn-center { opacity: 0.3 !important; }
+        .pn-next { text-align: right; }
     </style>
 </head>
 <body>
@@ -273,8 +287,18 @@
 
     </div>
 
+    <nav class="project-nav">
+        <a href="forge.html">&larr; Previous<span>Forge Platform</span></a>
+        <a href="index.html" class="pn-center">All Work</a>
+        <a href="limelight.html" class="pn-next">Next &rarr;<span>Vision Rig</span></a>
+    </nav>
     <footer>
         &copy; 2026 Sujjay Karthikeyan &mdash; FRC Team 6908 Infuzed
     </footer>
+    <script>
+        document.querySelectorAll('section, .stack-grid, .features, .field-widget, .pipeline, .callout-box').forEach(el => el.classList.add('reveal'));
+        const io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }), { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    </script>
 </body>
 </html>

@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sujjay Karthikeyan | Engineering Portfolio</title>
+    <meta property="og:title" content="Sujjay Karthikeyan | Engineering Portfolio">
+    <meta property="og:description" content="Robotics engineer and researcher specializing in autonomous drone swarms, UAV design, and multi-agent systems. UNCC Mechanical Engineering & Physics. SmartNet Lab.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sujjay02.github.io/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Sujjay Karthikeyan | Engineering Portfolio">
+    <meta name="twitter:description" content="Robotics engineer and researcher — autonomous swarms, VTOL UAVs, and AI-powered tools. UNCC SmartNet Lab.">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230a0a0a' width='100' height='100'/%3E%3Ctext x='50' y='75' font-family='Inter, sans-serif' font-size='70' font-weight='900' fill='%230366d6' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap" rel="stylesheet">
     <style>
@@ -183,6 +190,11 @@
             text-transform: uppercase;
             letter-spacing: 2px;
         }
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: none; }
+        .more-toggle { padding: 30px 0; border-bottom: 1px solid #222; }
+        .more-toggle-btn { background: none; border: 1px solid #333; color: var(--secondary-text); font-family: 'Inter', sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; padding: 14px 28px; cursor: pointer; transition: 0.3s; }
+        .more-toggle-btn:hover { border-color: var(--accent-color); color: var(--accent-color); }
     </style>
 </head>
 <body>
@@ -206,7 +218,7 @@
     <div class="container">
         <section id="projects">
             <h2>Work.</h2>
-            
+
             <div class="project" onclick="window.location.href='drones.html'">
                 <span class="tag">Robotics & Swarms</span>
                 <h3>Autonomous Drone Swarms</h3>
@@ -216,67 +228,82 @@
             <div class="project" onclick="window.location.href='vtol.html'">
                 <span class="tag">Aerospace</span>
                 <h3>Tilt-Rotor VTOL UAV</h3>
-                <p>Designing custom 2-axis transition mechanisms and optimizing aerospace structures for FDM 3D printing.</p>
+                <p>Designing custom 2-axis transition mechanisms and optimizing aerospace structures for FDM 3D printing. Interactive 3D model in OnShape.</p>
             </div>
 
             <div class="project" onclick="window.location.href='prism.html'">
                 <span class="tag">Generative AI</span>
                 <h3>Project Prism</h3>
-                <p>AI-powered universal code generator transforming text, voice, and images into production-ready React, 3D, and Python applications.</p>
-            </div>
-
-            <div class="project" onclick="window.location.href='forge.html'">
-                <span class="tag">AI + CAD</span>
-                <h3>Forge Platform</h3>
-                <p>Browser-based CAD application leveraging Google Gemini API for natural language to 3D geometry generation.</p>
-            </div>
-
-            <div class="project" onclick="window.location.href='glider.html'">
-                <span class="tag">Aerodynamics</span>
-                <h3>Heavy-Lift Glider</h3>
-                <p>Concept design for cost-efficient, disposable supply drop gliders utilizing passive control logic.</p>
-            </div>
-
-            <div class="project" onclick="window.location.href='laundry.html'">
-                <span class="tag">Software</span>
-                <h3>Laundry Optimizer</h3>
-                <p>Statistical demand smoothing software to mitigate machine contention in shared residential facilities.</p>
+                <p>AI-powered universal code generator transforming text, voice, and images into production-ready React, 3D WebGL, and Python applications using Gemini.</p>
             </div>
 
             <div class="project" onclick="window.location.href='frc.html'">
                 <span class="tag">Robotics / Embedded</span>
                 <h3>FRC 6908 Infuzed</h3>
-                <p>Four seasons of FIRST Robotics — capped by the 2026 robot as programmer and drive coach. Swerve drive, CTRE Phoenix 6, Field2d pose visualization, and CAN bus diagnostics.</p>
+                <p>Four seasons of FIRST Robotics — capped by the 2026 season as programmer and drive coach on a swerve-drive robot with Field2d pose visualization.</p>
             </div>
 
-            <div class="project" onclick="window.location.href='bambu.html'">
-                <span class="tag">Hardware / CV</span>
-                <h3>Bambu A1 Print Sentinel</h3>
-                <p>Real-time print health monitoring fusing Bambu Lab MQTT telemetry with OpenCV defect detection on the live camera feed into a single unified pipeline.</p>
+            <div class="more-toggle">
+                <button class="more-toggle-btn" id="more-btn" onclick="toggleMore()">More Work (8) ↓</button>
             </div>
 
-            <div class="project" onclick="window.location.href='nasa.html'">
-                <span class="tag">Aerospace / Earth Obs</span>
-                <h3>NASA Space to Soil</h3>
-                <p>Phase 1 concept: an adaptive SmallSat with onboard edge AI tasking a coordinated ground drone swarm for precision soil health monitoring — closing the orbital-to-in-situ loop.</p>
-            </div>
+            <div id="more-work" style="display:none">
+                <div class="project" onclick="window.location.href='nasa.html'">
+                    <span class="tag">Aerospace / Earth Obs</span>
+                    <h3>NASA Space to Soil</h3>
+                    <p>Phase 1 concept: adaptive SmallSat with onboard edge AI tasking a coordinated ground drone swarm for precision soil health monitoring.</p>
+                </div>
 
-            <div class="project" onclick="window.location.href='limelight.html'">
-                <span class="tag">Computer Vision</span>
-                <h3>Limelight 2 Vision Rig</h3>
-                <p>Repurposing FRC vision hardware — Limelight 2 + Raspberry Pi — as a standalone CV testbed for drone landing pad detection and optical flow visual odometry experiments.</p>
-            </div>
+                <div class="project" onclick="window.location.href='diskposition.html'">
+                    <span class="tag">Reinforcement Learning</span>
+                    <h3>Disk Position RL Prototype</h3>
+                    <p>The 2D Q-learning sandbox that validated multi-agent coverage optimization before the full ROS2/Gazebo simulation. Three agents, 25 targets, 50 lines of NumPy.</p>
+                </div>
 
-            <div class="project" onclick="window.location.href='diskposition.html'">
-                <span class="tag">Reinforcement Learning</span>
-                <h3>Disk Position RL Prototype</h3>
-                <p>The 2D Q-learning sandbox that validated multi-agent coverage optimization before the full ROS2/Gazebo simulation. Three agents, 25 targets, 50 lines of NumPy.</p>
-            </div>
+                <div class="project" onclick="window.location.href='limelight.html'">
+                    <span class="tag">Computer Vision</span>
+                    <h3>Limelight 2 Vision Rig</h3>
+                    <p>Repurposing FRC vision hardware as a standalone CV testbed for drone landing pad detection and optical flow visual odometry experiments.</p>
+                </div>
 
-            <div class="project" onclick="window.location.href='cluster.html'">
-                <span class="tag">Infrastructure</span>
-                <h3>Raspberry Pi Cluster</h3>
-                <p>Distributed compute setup for offloading RL training fragments, ROS2 node hosting, and parallel batch jobs — always-on at under 40W total draw.</p>
+                <div class="project" onclick="window.location.href='bambu.html'">
+                    <span class="tag">Hardware / CV</span>
+                    <h3>Bambu A1 Print Sentinel</h3>
+                    <p>Real-time print health monitoring fusing Bambu Lab MQTT telemetry with OpenCV defect detection into a single unified Python pipeline.</p>
+                </div>
+
+                <div class="project" onclick="window.location.href='forge.html'">
+                    <span class="tag">AI + CAD</span>
+                    <h3>Forge Platform</h3>
+                    <p>Browser-based CAD application using Google Gemini API to parse natural language into 3D geometric parameters — design at the speed of thought.</p>
+                </div>
+
+                <div class="project" onclick="window.location.href='glider.html'">
+                    <span class="tag">Aerodynamics</span>
+                    <h3>Heavy-Lift Glider</h3>
+                    <p>Concept design for cost-efficient, disposable supply drop gliders using reinforced cardboard and passive aerodynamic control surfaces.</p>
+                </div>
+
+                <div class="project" onclick="window.location.href='cluster.html'">
+                    <span class="tag">Infrastructure</span>
+                    <h3>Raspberry Pi Cluster</h3>
+                    <p>Distributed compute setup for offloading RL training fragments, ROS2 node hosting, and parallel batch jobs — always-on at under 40W total draw.</p>
+                </div>
+
+                <div class="project" onclick="window.location.href='laundry.html'">
+                    <span class="tag">Software</span>
+                    <h3>Laundry Optimizer</h3>
+                    <p>Statistical demand smoothing software using heat-map visualization and linear sorting to reduce machine contention in shared residential facilities.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="leadership">
+            <h2>Leadership.</h2>
+            <div class="project" onclick="window.location.href='inspirenc.html'">
+                <span class="tag">Nonprofit</span>
+                <h3>InspireNC</h3>
+                <p>Director of a student-led nonprofit building STEM pathways in North Carolina. Institutional partnerships with the US Air Force, MetLife, and Lenovo.</p>
             </div>
         </section>
 
@@ -407,5 +434,23 @@
         &copy; 2026 Sujjay Karthikeyan — UNCC Mechanical Engineering & Physics
     </footer>
 
+    <script>
+        function toggleMore() {
+            const s = document.getElementById('more-work');
+            const b = document.getElementById('more-btn');
+            const hidden = s.style.display === 'none';
+            s.style.display = hidden ? 'block' : 'none';
+            b.textContent = hidden ? 'Show Less ↑' : 'More Work (8) ↓';
+            if (hidden) {
+                document.querySelectorAll('#more-work .project').forEach(el => {
+                    el.classList.add('reveal');
+                    setTimeout(() => el.classList.add('visible'), 50);
+                });
+            }
+        }
+        document.querySelectorAll('.project, .skills-category, #projects > h2, #leadership > h2, #skills > h2').forEach(el => el.classList.add('reveal'));
+        const io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }), { threshold: 0.05 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    </script>
 </body>
 </html>
