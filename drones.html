@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autonomous Drones | Sujjay Karthikeyan</title>
     <meta property="og:title" content="Autonomous Drone Swarms | Sujjay Karthikeyan">
-    <meta property="og:description" content="Training reinforcement learning agents for multi-drone coverage optimization — from 2D Q-learning prototypes to full ROS2 Jazzy / Gazebo Harmonic simulation at SmartNet Lab.">
+    <meta property="og:description" content="Training RL agents for multi-drone coverage optimization — 76% coverage benchmark achieved, AIAA SciTech 2027 paper in progress. ROS2/Gazebo simulation at SmartNet Lab, UNCC.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sujjay02.github.io/drones.html">
     <meta name="twitter:card" content="summary">
@@ -176,19 +176,20 @@
                 </div>
             </div>
 
-            <p>The DQN agent uses a 4-layer fully connected network (4 → 64 → 64 → 64 → 25) with experience replay and a target network updated every 1,000 steps. The companion DiscWorld repo generates Gazebo SDF worlds with 25 cylindrical targets for sim-to-real transfer.</p>
+            <p>The DQN agent uses a 4-layer fully connected network (4 → 64 → 64 → 64 → 25) with experience replay and a target network updated every 1,000 steps. When a convergence plateau appeared, the task was reframed as a static placement problem rather than a sequential decision process — a grid-search optimizer then established a <strong style="color: var(--accent);">76% coverage benchmark</strong> the RL agent trains against. The companion DiscWorld repo generates Gazebo SDF worlds with 25 cylindrical targets for sim-to-real transfer.</p>
         </section>
 
         <section class="future-box">
-            <h2>Roadmap.</h2>
-            <p>Scaling from 2D RL prototypes to full 3D drone coordination in Gazebo, with the goal of deploying learned coverage policies on multi-UAV systems.</p>
+            <h2>Research Output.</h2>
+            <p>This work is being written up for the <strong style="color: var(--accent);">AIAA SciTech 2027 Student Paper Competition</strong> (Uncrewed and Autonomous Systems track), co-authored at SmartNet Lab under Adv. Dr. Ran Zhang. The pipeline — 2D Q-learning prototype → DQN with benchmark → full ROS2/Gazebo simulation — documents the complete iteration arc from abstraction to deployment-ready system.</p>
             <div class="tag-list">
                 <span>Reinforcement Learning</span>
                 <span>Deep Q-Networks</span>
                 <span>Coverage Optimization</span>
-                <span>Collision Avoidance</span>
+                <span>76% Coverage Benchmark</span>
                 <span>Sim-to-Real Transfer</span>
                 <span>Multi-Robot Systems</span>
+                <span>AIAA SciTech 2027</span>
             </div>
         </section>
 
