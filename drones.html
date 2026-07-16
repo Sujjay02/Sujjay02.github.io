@@ -8,9 +8,11 @@
     <meta property="og:description" content="Training RL agents for multi-drone coverage optimization — 76% coverage benchmark achieved, AIAA SciTech 2027 paper in progress. ROS2/Gazebo simulation at SmartNet Lab, UNCC.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sujjay02.github.io/drones.html">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://sujjay02.github.io/media/gazebo-sim.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Autonomous Drone Swarms | Sujjay Karthikeyan">
     <meta name="twitter:description" content="Multi-drone coverage optimization with DQN reinforcement learning at SmartNet Lab, UNCC.">
+    <meta name="twitter:image" content="https://sujjay02.github.io/media/gazebo-sim.jpg">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230a0a0a' width='100' height='100'/%3E%3Ctext x='50' y='75' font-family='Inter, sans-serif' font-size='70' font-weight='900' fill='%230366d6' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap" rel="stylesheet">
     <style>
@@ -43,8 +45,12 @@
         /* Process Gallery */
         .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
         .gallery-item { position: relative; }
-        .gallery-item img { width: 100%; height: auto; border: 1px solid #222; filter: grayscale(100%) contrast(110%); transition: 0.5s ease; }
+        .gallery-item img { width: 100%; height: auto; display: block; border: 1px solid #222; filter: grayscale(100%) contrast(110%); transition: 0.5s ease; }
         .gallery-item:hover img { filter: grayscale(0%) contrast(100%); border-color: var(--accent); }
+        /* Placeholder shown until a real image is dropped in (img hides itself on error) */
+        .media-frame { position: relative; width: 100%; aspect-ratio: 16 / 10; border: 1px dashed #333; background: #0e0e0e; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .media-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: none; }
+        .media-frame .ph { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: #444; }
         .caption { margin-top: 15px; font-size: 0.7rem; text-transform: uppercase; color: var(--dim); letter-spacing: 1px; border-left: 2px solid var(--accent); padding-left: 10px; }
 
         /* Research Poster Section */
@@ -116,18 +122,26 @@
             
             <div class="gallery-grid">
                 <div class="gallery-item">
+                    <div class="media-frame">
+                        <span class="ph">Add media/gazebo-sim.jpg</span>
+                        <img src="media/gazebo-sim.jpg" alt="Gazebo Harmonic multi-UAV swarm simulation" onerror="this.style.display='none'">
+                    </div>
                     <div class="caption">
                         01. Gazebo Harmonic Multi-UAV Simulation
-                    <br><small>High-fidelity swarm coordination on Ubuntu 24.04</small>
-            </div>
-            </div>
-            <div class="gallery-item">
+                        <br><small>High-fidelity swarm coordination on Ubuntu 24.04</small>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="media-frame">
+                        <span class="ph">Add media/telemetry.jpg</span>
+                        <img src="media/telemetry.jpg" alt="Real-time telemetry and odometry validation" onerror="this.style.display='none'">
+                    </div>
                     <div class="caption">
                         02. Real-Time Telemetry & Odom Validation
-                    <br><small>Verified 100Hz odometry updates for decentralized logic</small>
+                        <br><small>Verified 100Hz odometry updates for decentralized logic</small>
+                    </div>
                 </div>
             </div>
-        </div>
         </section>
 
         <section class="poster-section">
@@ -163,15 +177,23 @@
 
             <div class="gallery-grid" style="margin-bottom: 80px;">
                 <div class="gallery-item">
+                    <div class="media-frame">
+                        <span class="ph">Add media/coverage-2d.png</span>
+                        <img src="media/coverage-2d.png" alt="2D coverage abstraction — 25 targets on a 5x5 grid" onerror="this.style.display='none'">
+                    </div>
                     <div class="caption">
                         03. 2D Coverage Abstraction
-                    <br><small>25 dots on a 5x5 grid — disks represent drone coverage footprints (r=1.2)</small>
+                        <br><small>25 dots on a 5x5 grid — disks represent drone coverage footprints (r=1.2)</small>
                     </div>
                 </div>
                 <div class="gallery-item">
+                    <div class="media-frame">
+                        <span class="ph">Add media/dqn-curve.png</span>
+                        <img src="media/dqn-curve.png" alt="DQN training curve — reward over episodes" onerror="this.style.display='none'">
+                    </div>
                     <div class="caption">
                         04. DQN Training Pipeline
-                    <br><small>Experience replay, target network updates, epsilon-greedy exploration with decay</small>
+                        <br><small>Experience replay, target network updates, epsilon-greedy exploration with decay</small>
                     </div>
                 </div>
             </div>

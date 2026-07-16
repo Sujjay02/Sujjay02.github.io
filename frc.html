@@ -8,9 +8,11 @@
     <meta property="og:description" content="Four seasons of FIRST Robotics Competition — 2026 capstone as programmer and drive coach on a swerve-drive robot with CTRE Phoenix 6, Field2d pose visualization, and CANcoder diagnostics.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sujjay02.github.io/frc.html">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://sujjay02.github.io/media/frc-robot.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="FRC 6908 Infuzed | Sujjay Karthikeyan">
     <meta name="twitter:description" content="2026 FRC season capstone — swerve drive, CTRE Phoenix 6, Field2d, drive coaching. Team 6908.">
+    <meta name="twitter:image" content="https://sujjay02.github.io/media/frc-robot.jpg">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230a0a0a' width='100' height='100'/%3E%3Ctext x='50' y='75' font-family='Inter, sans-serif' font-size='70' font-weight='900' fill='%230366d6' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap" rel="stylesheet">
     <style>
@@ -132,6 +134,15 @@
         }
         .pipeline .kw { color: var(--accent); }
         .pipeline .val { color: var(--text); }
+
+        /* Photo gallery */
+        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 100px; }
+        .gallery-item { position: relative; }
+        .media-frame { position: relative; width: 100%; aspect-ratio: 16 / 10; border: 1px dashed #333; background: #0e0e0e; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .media-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(110%); transition: 0.5s ease; }
+        .gallery-item:hover .media-frame img { filter: grayscale(0%) contrast(100%); }
+        .media-frame .ph { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: #444; }
+        .gallery-cap { margin-top: 15px; font-size: 0.7rem; text-transform: uppercase; color: var(--dim); letter-spacing: 1px; border-left: 2px solid var(--accent); padding-left: 10px; }
 
         .callout-box { margin-top: 120px; padding: 80px; background: #0e0e0e; border: 1px solid #222; }
         .callout-box h2 { color: var(--accent); margin-top: 0; }
@@ -260,6 +271,27 @@
                 <span class="kw">Field2d &nbsp;&nbsp;&nbsp;&nbsp;</span> → <span class="val">Elastic Dashboard Pose Widget</span><br>
                 <span class="kw">CAN Health &nbsp;</span> → <span class="val">Fault flags surfaced to driver HUD</span><br>
                 <span class="kw">Drive Coach &nbsp;</span> → <span class="val">Strategy overlay + real-time calls</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>On the Field.</h2>
+            <p>The robot, the pit, and the team in competition.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="media-frame">
+                        <span class="ph">Add media/frc-robot.jpg</span>
+                        <img src="media/frc-robot.jpg" alt="FRC 6908 swerve-drive competition robot" onerror="this.style.display='none'">
+                    </div>
+                    <div class="gallery-cap">01. 2026 Swerve-Drive Competition Robot</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="media-frame">
+                        <span class="ph">Add media/frc-match.jpg</span>
+                        <img src="media/frc-match.jpg" alt="Team 6908 competing on the FRC field" onerror="this.style.display='none'">
+                    </div>
+                    <div class="gallery-cap">02. Match Play — Drive Coaching</div>
+                </div>
             </div>
         </section>
 

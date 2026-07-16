@@ -8,9 +8,11 @@
     <meta property="og:description" content="Robotics engineer and researcher at SmartNet Lab, UNCC. Building autonomous drone swarms, VTOL UAVs, and AI-powered tools at the intersection of mechanical design and intelligent software.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sujjay02.github.io/about.html">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://sujjay02.github.io/profile-photo.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="About | Sujjay Karthikeyan">
     <meta name="twitter:description" content="Robotics engineer and researcher at SmartNet Lab, UNCC. Autonomous systems, UAV design, multi-agent coordination.">
+    <meta name="twitter:image" content="https://sujjay02.github.io/profile-photo.jpeg">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230a0a0a' width='100' height='100'/%3E%3Ctext x='50' y='75' font-family='Inter, sans-serif' font-size='70' font-weight='900' fill='%230366d6' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap" rel="stylesheet">
     <style>
@@ -106,6 +108,15 @@
             line-height: 1.8;
         }
 
+        .lede {
+            font-size: 1.9rem;
+            color: var(--text-color);
+            font-weight: 300;
+            line-height: 1.4;
+            max-width: 760px;
+            margin-bottom: 50px;
+        }
+
         .highlight {
             color: var(--text-color);
             font-weight: 700;
@@ -182,6 +193,91 @@
             color: var(--secondary-text);
             font-size: 1.1rem;
         }
+
+        /* Press / Media Section */
+        .press-section {
+            margin-top: 120px;
+            padding: 60px;
+            background: #0e0e0e;
+            border: 1px solid #222;
+        }
+
+        .press-section h2 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+
+        .press-bio {
+            font-size: 1.15rem;
+            color: var(--text-color);
+            max-width: 760px;
+            line-height: 1.7;
+        }
+
+        .press-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .press-stat .num {
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: var(--text-color);
+            line-height: 1;
+        }
+
+        .press-stat .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--secondary-text);
+            margin-top: 10px;
+        }
+
+        .press-quote {
+            font-size: 1.4rem;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-color);
+            border-left: 3px solid var(--accent-color);
+            padding-left: 25px;
+            margin: 40px 0;
+            max-width: 760px;
+            line-height: 1.5;
+        }
+
+        .press-assets {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .press-assets a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--accent-color);
+            padding: 12px 24px;
+            transition: all 0.3s;
+        }
+
+        .press-assets a:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+        .press-contact {
+            margin-top: 40px;
+            font-size: 0.95rem;
+            color: var(--secondary-text);
+        }
+
+        .press-contact a { color: var(--accent-color); text-decoration: none; }
 
         .contact-section {
             margin-top: 120px;
@@ -264,15 +360,17 @@
 
     <div class="content-wrapper">
         <div class="profile-section">
-            <img src="profile-photo.jpg" alt="Sujjay Karthikeyan at UNC Charlotte" class="profile-photo">
+            <img src="profile-photo.jpeg" alt="Sujjay Karthikeyan at UNC Charlotte" class="profile-photo">
         </div>
 
         <section>
-            <p>I'm a <span class="highlight">robotics engineering intern and researcher</span> specializing in autonomous systems, UAV design, and multi-agent coordination. I'm currently interning at <span class="highlight">Kathedra</span> designing precision gantry systems, while continuing research at <span class="highlight">SmartNet Lab (UNCC)</span> on multi-drone coverage optimization with deep reinforcement learning.</p>
+            <p class="lede">I build <span class="highlight">drone swarms that teach themselves to cover the ground</span> — and I run a nonprofit putting engineering into the hands of students who'd never otherwise touch it.</p>
 
-            <p>My work focuses on bridging the gap between <span class="highlight">simulation and reality</span> — building systems that are theoretically sound and practically deployable. From designing VTOL aircraft in CAD to programming distributed control algorithms in ROS2, I thrive at the intersection of mechanical design and intelligent software.</p>
+            <p>I'm a robotics engineering intern and researcher working at the intersection of mechanical design and intelligent software. At <span class="highlight">SmartNet Lab (UNC Charlotte)</span> I'm co-authoring a paper on autonomous multi-drone coverage with deep reinforcement learning, headed for the <span class="highlight">AIAA SciTech 2027 Student Paper Competition</span>. At <span class="highlight">Kathedra</span> I design precision gantry systems — and I'm the person who caught the firmware mismatch that would've broken the whole ROS2 integration before a single part was ordered.</p>
 
-            <p>I'm co-authoring a paper on autonomous drone swarm coverage for the <span class="highlight">AIAA SciTech 2027 Student Paper Competition</span> (Uncrewed and Autonomous Systems track), and lead <span class="highlight">InspireNC</span>, a student-run nonprofit that has raised $35K and partnered with the US Air Force, MetLife, and Lenovo to bring engineering education to students across North Carolina.</p>
+            <p>The thread through all of it is <span class="highlight">closing the gap between simulation and reality</span> — building things that are theoretically sound and actually fly, print, and ship. From tilt-rotor VTOL aircraft in CAD to distributed control algorithms in ROS2 to a three-drone swarm learning coverage policies in Gazebo.</p>
+
+            <p>Away from the lab, I direct <span class="highlight">InspireNC</span>, a student-run nonprofit that has raised <span class="highlight">$35,000</span> and partnered with the <span class="highlight">US Air Force, MetLife, and Lenovo</span> to bring hands-on engineering education to students across North Carolina.</p>
         </section>
 
         <section>
@@ -358,6 +456,40 @@
                     <div class="timeline-desc">AI-powered universal code generator using Google Gemini that transforms text, voice, and images into production-ready React, 3D WebGL, and Python applications.</div>
                 </div>
             </div>
+        </section>
+
+        <section class="press-section">
+            <h2>Press & Media</h2>
+            <p class="press-bio"><span class="highlight">Sujjay Karthikeyan</span> is a robotics engineer and researcher at UNC Charlotte building autonomous drone swarms, VTOL aircraft, and AI-powered engineering tools. He co-authors reinforcement-learning research at SmartNet Lab, interns on precision-motion hardware at Kathedra, and directs InspireNC, a nonprofit expanding STEM access across North Carolina.</p>
+
+            <div class="press-stats">
+                <div class="press-stat">
+                    <div class="num">$35K</div>
+                    <div class="label">Raised for STEM Education</div>
+                </div>
+                <div class="press-stat">
+                    <div class="num">3</div>
+                    <div class="label">Drone Autonomous Swarm</div>
+                </div>
+                <div class="press-stat">
+                    <div class="num">76%</div>
+                    <div class="label">RL Coverage Benchmark</div>
+                </div>
+                <div class="press-stat">
+                    <div class="num">2027</div>
+                    <div class="label">AIAA SciTech Paper</div>
+                </div>
+            </div>
+
+            <blockquote class="press-quote">"I build systems that are theoretically sound and actually fly, print, and ship — closing the gap between what works in simulation and what works in the real world."</blockquote>
+
+            <div class="press-assets">
+                <a href="profile-photo.jpeg" target="_blank">Download Headshot</a>
+                <a href="SK_2026_Resume.pdf" target="_blank">Resume / CV</a>
+                <a href="Research poster- Sujjay Karthikeyan.pptx.pdf" target="_blank">Research Poster</a>
+            </div>
+
+            <p class="press-contact">Press inquiries: <a href="mailto:sujjaykarthikeyan@gmail.com">sujjaykarthikeyan@gmail.com</a></p>
         </section>
 
         <section class="contact-section">

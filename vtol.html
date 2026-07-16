@@ -8,9 +8,11 @@
     <meta property="og:description" content="Custom 2-axis tilt-rotor VTOL UAV combining helicopter vertical lift with fixed-wing efficiency. Designed in CAD, optimized for FDM 3D printing, validated in ROS2/Gazebo simulation.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sujjay02.github.io/vtol.html">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://sujjay02.github.io/media/vtol-render.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Tilt-Rotor VTOL UAV | Sujjay Karthikeyan">
     <meta name="twitter:description" content="Custom 2-axis tilt-rotor VTOL UAV — helicopter lift, fixed-wing efficiency, FDM-optimized structure.">
+    <meta name="twitter:image" content="https://sujjay02.github.io/media/vtol-render.jpg">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230a0a0a' width='100' height='100'/%3E%3Ctext x='50' y='75' font-family='Inter, sans-serif' font-size='70' font-weight='900' fill='%230366d6' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap" rel="stylesheet">
     <style>
@@ -131,6 +133,17 @@
         }
 
         .cad-section { margin-top: 80px; margin-bottom: 80px; }
+        .cad-embed { width: 100%; height: 70vh; min-height: 500px; border: 1px solid #222; background: #0e0e0e; margin: 30px 0; }
+        .cad-embed iframe { width: 100%; height: 100%; border: none; }
+
+        /* Media gallery */
+        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 40px 0 80px; }
+        .gallery-item { position: relative; }
+        .media-frame { position: relative; width: 100%; aspect-ratio: 16 / 10; border: 1px dashed #333; background: #0e0e0e; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .media-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(110%); transition: 0.5s ease; }
+        .gallery-item:hover .media-frame img { filter: grayscale(0%) contrast(100%); }
+        .media-frame .ph { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: #444; }
+        .caption { margin-top: 15px; font-size: 0.7rem; text-transform: uppercase; color: var(--dim); letter-spacing: 1px; border-left: 2px solid var(--accent-color); padding-left: 10px; }
         .cad-link-btn {
             display: inline-block;
             border: 1px solid var(--accent-color);
@@ -219,10 +232,50 @@
         <section class="cad-section">
             <h2>3D CAD Model</h2>
             <p>Full interactive CAD model in OnShape. Rotate, zoom, and explore every subsystem — tilt mechanism, wing structure, motor mounts, and avionics bay.</p>
+            <div class="cad-embed">
+                <iframe src="https://cad.onshape.com/documents/926c6a7bf9e6feb3c52c350e/w/9545e494e594908f64a9f086/e/437dbbae9c5ee170a9947ff4?renderMode=0&uiState=6970027bf1d378b62466902a"
+                        title="VTOL UAV — interactive OnShape CAD model"
+                        allowfullscreen></iframe>
+            </div>
             <a href="https://cad.onshape.com/documents/926c6a7bf9e6feb3c52c350e/w/9545e494e594908f64a9f086/e/437dbbae9c5ee170a9947ff4?renderMode=0&uiState=6970027bf1d378b62466902a"
                target="_blank"
                rel="noopener noreferrer"
-               class="cad-link-btn">View 3D Model in OnShape →</a>
+               class="cad-link-btn">Open Full Model in OnShape →</a>
+        </section>
+
+        <section>
+            <h2>Build Gallery</h2>
+            <p>Renders, tilt-mechanism detail, and FDM prints from the design process.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="media-frame">
+                        <span class="ph">Add media/vtol-render.jpg</span>
+                        <img src="media/vtol-render.jpg" alt="VTOL UAV full CAD render" onerror="this.style.display='none'">
+                    </div>
+                    <div class="caption">01. Full Airframe Render — Isometric</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="media-frame">
+                        <span class="ph">Add media/vtol-tilt.jpg</span>
+                        <img src="media/vtol-tilt.jpg" alt="2-axis tilt-rotor mechanism detail" onerror="this.style.display='none'">
+                    </div>
+                    <div class="caption">02. 2-Axis Tilt-Rotor Mechanism — Detail</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="media-frame">
+                        <span class="ph">Add media/vtol-print.jpg</span>
+                        <img src="media/vtol-print.jpg" alt="FDM printed VTOL structural component" onerror="this.style.display='none'">
+                    </div>
+                    <div class="caption">03. FDM-Printed Structure — Layer Orientation</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="media-frame">
+                        <span class="ph">Add media/vtol-assembly.jpg</span>
+                        <img src="media/vtol-assembly.jpg" alt="VTOL UAV physical assembly" onerror="this.style.display='none'">
+                    </div>
+                    <div class="caption">04. Physical Assembly — Wing + Motor Mounts</div>
+                </div>
+            </div>
         </section>
 
         <div class="tech-stack">
