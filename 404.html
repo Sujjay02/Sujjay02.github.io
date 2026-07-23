@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Lost Signal | Sujjay Karthikeyan</title>
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230a0a0a' width='100' height='100'/%3E%3Ctext x='50' y='75' font-family='Inter, sans-serif' font-size='70' font-weight='900' fill='%230366d6' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #f4f4f4;
+            --accent-color: #0366d6;
+            --secondary-text: #888;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .noise {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; opacity: 0.03; z-index: 999;
+            background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+        }
+        h1 {
+            font-size: clamp(4rem, 18vw, 11rem);
+            font-weight: 900;
+            line-height: 0.85;
+            margin: 0;
+            letter-spacing: -4px;
+        }
+        .subtitle {
+            font-size: 0.8rem;
+            color: var(--secondary-text);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+        .lede {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            font-weight: 300;
+            max-width: 480px;
+            margin: 24px auto 30px;
+            line-height: 1.5;
+        }
+        .game-wrap {
+            position: relative;
+            width: 100%;
+            max-width: 640px;
+            margin: 10px auto 0;
+        }
+        canvas {
+            width: 100%;
+            display: block;
+            background: #0e0e0e;
+            border: 1px solid #222;
+            border-radius: 4px;
+            touch-action: manipulation;
+            cursor: pointer;
+        }
+        .hud {
+            position: absolute;
+            top: 12px; left: 14px;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--secondary-text);
+            pointer-events: none;
+        }
+        .hud .score { color: var(--accent-color); font-weight: 700; }
+        .overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10,10,10,0.82);
+            border-radius: 4px;
+            padding: 20px;
+        }
+        .overlay.hidden { display: none; }
+        .overlay h2 {
+            font-size: 1.6rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin: 0 0 8px;
+            letter-spacing: -1px;
+        }
+        .overlay p {
+            font-size: 0.85rem;
+            color: var(--secondary-text);
+            margin: 0 0 22px;
+            max-width: 340px;
+            line-height: 1.5;
+        }
+        .btn {
+            background: none;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            padding: 14px 30px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover { background: var(--accent-color); color: var(--bg-color); }
+        .links {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 34px;
+        }
+        .links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        .links a:hover { opacity: 1; }
+        .hint {
+            font-size: 0.65rem;
+            color: var(--secondary-text);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="noise"></div>
+
+    <h1>404</h1>
+    <p class="subtitle">Signal Lost</p>
+    <p class="lede">This page drifted off the flight path. While the telemetry reboots, keep the drone airborne.</p>
+
+    <div class="game-wrap">
+        <canvas id="game" width="640" height="360" aria-label="Drone dodge mini-game"></canvas>
+        <div class="hud">Score <span class="score" id="score">0</span> &nbsp; Best <span id="best">0</span></div>
+        <div class="overlay" id="overlay">
+            <h2 id="over-title">Drone Dodge</h2>
+            <p id="over-msg">Thread the drone through the gaps. Click, tap, or press Space / ↑ to pulse the rotors.</p>
+            <button class="btn" id="start-btn">Start Flight</button>
+        </div>
+    </div>
+
+    <p class="hint">Space / ↑ / Click / Tap to fly</p>
+
+    <div class="links">
+        <a href="/">← Back Home</a>
+        <a href="/about.html">About</a>
+        <a href="/index.html#projects">Work</a>
+    </div>
+
+    <script>
+    (function () {
+        const canvas = document.getElementById('game');
+        const ctx = canvas.getContext('2d');
+        const W = canvas.width, H = canvas.height;
+        const ACCENT = '#0366d6';
+        const scoreEl = document.getElementById('score');
+        const bestEl = document.getElementById('best');
+        const overlay = document.getElementById('overlay');
+        const overTitle = document.getElementById('over-title');
+        const overMsg = document.getElementById('over-msg');
+        const startBtn = document.getElementById('start-btn');
+
+        let best = 0;
+        try { best = parseInt(localStorage.getItem('droneDodgeBest') || '0', 10) || 0; } catch (e) {}
+        bestEl.textContent = best;
+
+        const GRAVITY = 0.45;
+        const LIFT = -7.2;
+        const GAP = 130;
+        const OB_W = 62;
+        const SPEED = 2.8;
+
+        let drone, obstacles, score, frame, running, raf;
+
+        function reset() {
+            drone = { x: 130, y: H / 2, vy: 0, r: 11 };
+            obstacles = [];
+            score = 0;
+            frame = 0;
+            running = true;
+            scoreEl.textContent = '0';
+        }
+
+        function spawn() {
+            const margin = 50;
+            const gapY = margin + Math.random() * (H - GAP - margin * 2);
+            obstacles.push({ x: W + OB_W, gapY: gapY, passed: false });
+        }
+
+        function flap() {
+            if (!running) return;
+            drone.vy = LIFT;
+        }
+
+        function drawDrone(d) {
+            // rotors
+            ctx.strokeStyle = ACCENT;
+            ctx.lineWidth = 2;
+            const tilt = Math.max(-0.4, Math.min(0.4, d.vy / 20));
+            ctx.save();
+            ctx.translate(d.x, d.y);
+            ctx.rotate(tilt);
+            // arms
+            ctx.beginPath();
+            ctx.moveTo(-14, 0); ctx.lineTo(14, 0);
+            ctx.stroke();
+            // rotor blades (spinning)
+            const spin = frame * 0.6;
+            [-14, 14].forEach(function (ox) {
+                ctx.beginPath();
+                ctx.moveTo(ox + Math.cos(spin) * 9, -Math.sin(spin) * 3 - 4);
+                ctx.lineTo(ox - Math.cos(spin) * 9, Math.sin(spin) * 3 - 4);
+                ctx.stroke();
+            });
+            // body
+            ctx.fillStyle = '#f4f4f4';
+            ctx.beginPath();
+            ctx.arc(0, 0, 5, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+        }
+
+        function drawObstacle(o) {
+            ctx.fillStyle = '#1c1c1c';
+            ctx.strokeStyle = '#2a2a2a';
+            ctx.lineWidth = 1;
+            // top
+            ctx.fillRect(o.x, 0, OB_W, o.gapY);
+            ctx.strokeRect(o.x + 0.5, 0.5, OB_W - 1, o.gapY);
+            // bottom
+            const by = o.gapY + GAP;
+            ctx.fillRect(o.x, by, OB_W, H - by);
+            ctx.strokeRect(o.x + 0.5, by + 0.5, OB_W - 1, H - by - 1);
+            // accent edges of the gap
+            ctx.fillStyle = ACCENT;
+            ctx.fillRect(o.x, o.gapY - 3, OB_W, 3);
+            ctx.fillRect(o.x, by, OB_W, 3);
+        }
+
+        function collide(o) {
+            const dx = Math.max(o.x - drone.x, 0, drone.x - (o.x + OB_W));
+            if (dx > drone.r) return false;
+            // within column x-range: check gap
+            if (drone.x + drone.r > o.x && drone.x - drone.r < o.x + OB_W) {
+                if (drone.y - drone.r < o.gapY || drone.y + drone.r > o.gapY + GAP) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function gameOver() {
+            running = false;
+            cancelAnimationFrame(raf);
+            if (score > best) {
+                best = score;
+                bestEl.textContent = best;
+                try { localStorage.setItem('droneDodgeBest', String(best)); } catch (e) {}
+            }
+            overTitle.textContent = 'Signal Reacquired';
+            overMsg.textContent = 'You scored ' + score + '. The real pages are still out there — fly again or head home.';
+            startBtn.textContent = 'Fly Again';
+            overlay.classList.remove('hidden');
+        }
+
+        function loop() {
+            frame++;
+            ctx.clearRect(0, 0, W, H);
+
+            // subtle grid backdrop
+            ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+            ctx.lineWidth = 1;
+            for (let gx = (frame * -SPEED) % 40; gx < W; gx += 40) {
+                ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, H); ctx.stroke();
+            }
+
+            // physics
+            drone.vy += GRAVITY;
+            drone.y += drone.vy;
+
+            // spawn
+            if (frame % 95 === 0) spawn();
+
+            // obstacles
+            for (let i = obstacles.length - 1; i >= 0; i--) {
+                const o = obstacles[i];
+                o.x -= SPEED;
+                drawObstacle(o);
+                if (!o.passed && o.x + OB_W < drone.x) {
+                    o.passed = true;
+                    score++;
+                    scoreEl.textContent = score;
+                }
+                if (o.x + OB_W < 0) obstacles.splice(i, 1);
+                if (collide(o)) return gameOver();
+            }
+
+            drawDrone(drone);
+
+            // bounds
+            if (drone.y + drone.r > H || drone.y - drone.r < 0) return gameOver();
+
+            raf = requestAnimationFrame(loop);
+        }
+
+        function start() {
+            overlay.classList.add('hidden');
+            reset();
+            cancelAnimationFrame(raf);
+            raf = requestAnimationFrame(loop);
+        }
+
+        startBtn.addEventListener('click', function (e) { e.stopPropagation(); start(); });
+
+        function input(e) {
+            if (!running && overlay.classList.contains('hidden')) return;
+            if (running) { flap(); }
+        }
+        canvas.addEventListener('mousedown', function (e) { e.preventDefault(); flap(); });
+        canvas.addEventListener('touchstart', function (e) { e.preventDefault(); flap(); }, { passive: false });
+        window.addEventListener('keydown', function (e) {
+            if (e.code === 'Space' || e.code === 'ArrowUp') {
+                e.preventDefault();
+                if (!running) { start(); } else { flap(); }
+            }
+        });
+    })();
+    </script>
+</body>
+</html>

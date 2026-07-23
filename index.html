@@ -121,12 +121,20 @@
         }
 
         /* Work Section */
-        .project { 
+        .project {
+            display: block;
+            text-decoration: none;
+            color: inherit;
             position: relative;
-            padding: 60px 0; 
-            border-bottom: 1px solid #222; 
+            padding: 60px 0;
+            border-bottom: 1px solid #222;
             transition: 0.4s ease-in-out;
             cursor: pointer;
+        }
+
+        .project:focus-visible {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 4px;
         }
 
         .project:hover {
@@ -230,92 +238,92 @@
         <section id="projects">
             <h2>Work.</h2>
 
-            <div class="project" onclick="window.location.href='drones.html'">
+            <a class="project" href="drones.html">
                 <span class="tag">Robotics & Swarms</span>
                 <h3>Autonomous Drone Swarms</h3>
                 <p>Training reinforcement learning agents for multi-drone coverage optimization, from 2D DQN prototypes to full ROS2/Gazebo simulation at SmartNet Lab.</p>
-            </div>
+            </a>
 
-            <div class="project" onclick="window.location.href='vtol.html'">
+            <a class="project" href="vtol.html">
                 <span class="tag">Aerospace</span>
                 <h3>Tilt-Rotor VTOL UAV</h3>
                 <p>Designing custom 2-axis transition mechanisms and optimizing aerospace structures for FDM 3D printing. Interactive 3D model in OnShape.</p>
-            </div>
+            </a>
 
-            <div class="project" onclick="window.location.href='prism.html'">
+            <a class="project" href="prism.html">
                 <span class="tag">Generative AI</span>
                 <h3>Project Prism</h3>
                 <p>AI-powered universal code generator transforming text, voice, and images into production-ready React, 3D WebGL, and Python applications using Gemini.</p>
-            </div>
+            </a>
 
-            <div class="project" onclick="window.location.href='frc.html'">
+            <a class="project" href="frc.html">
                 <span class="tag">Robotics / Embedded</span>
                 <h3>FRC 6908 Infuzed</h3>
                 <p>Four seasons of FIRST Robotics — capped by the 2026 season as programmer and drive coach on a swerve-drive robot with Field2d pose visualization.</p>
-            </div>
+            </a>
 
             <div class="more-toggle">
                 <button class="more-toggle-btn" id="more-btn" onclick="toggleMore()">More Work (8) ↓</button>
             </div>
 
             <div id="more-work" style="display:none">
-                <div class="project" onclick="window.location.href='nasa.html'">
+                <a class="project" href="nasa.html">
                     <span class="tag">Aerospace / Earth Obs</span>
                     <h3>NASA Space to Soil</h3>
                     <p>Phase 1 concept: adaptive SmallSat with onboard edge AI tasking a coordinated ground drone swarm for precision soil health monitoring.</p>
-                </div>
+                </a>
 
-                <div class="project" onclick="window.location.href='diskposition.html'">
+                <a class="project" href="diskposition.html">
                     <span class="tag">Reinforcement Learning</span>
                     <h3>Disk Position RL Prototype</h3>
                     <p>The 2D Q-learning sandbox that validated multi-agent coverage optimization before the full ROS2/Gazebo simulation. Three agents, 25 targets, 50 lines of NumPy.</p>
-                </div>
+                </a>
 
-                <div class="project" onclick="window.location.href='limelight.html'">
+                <a class="project" href="limelight.html">
                     <span class="tag">Computer Vision</span>
                     <h3>Limelight 2 Vision Rig</h3>
                     <p>Repurposing FRC vision hardware as a standalone CV testbed for drone landing pad detection and optical flow visual odometry experiments.</p>
-                </div>
+                </a>
 
-                <div class="project" onclick="window.location.href='bambu.html'">
+                <a class="project" href="bambu.html">
                     <span class="tag">Hardware / CV</span>
                     <h3>Bambu A1 Print Sentinel</h3>
                     <p>Real-time print health monitoring fusing Bambu Lab MQTT telemetry with OpenCV defect detection into a single unified Python pipeline.</p>
-                </div>
+                </a>
 
-                <div class="project" onclick="window.location.href='forge.html'">
+                <a class="project" href="forge.html">
                     <span class="tag">AI + CAD</span>
                     <h3>Forge Platform</h3>
                     <p>Browser-based CAD application using Google Gemini API to parse natural language into 3D geometric parameters — design at the speed of thought.</p>
-                </div>
+                </a>
 
-                <div class="project" onclick="window.location.href='glider.html'">
+                <a class="project" href="glider.html">
                     <span class="tag">Aerodynamics</span>
                     <h3>Heavy-Lift Glider</h3>
                     <p>Concept design for cost-efficient, disposable supply drop gliders using reinforced cardboard and passive aerodynamic control surfaces.</p>
-                </div>
+                </a>
 
-                <div class="project" onclick="window.location.href='cluster.html'">
+                <a class="project" href="cluster.html">
                     <span class="tag">Infrastructure</span>
                     <h3>Raspberry Pi Cluster</h3>
                     <p>Distributed compute setup for offloading RL training fragments, ROS2 node hosting, and parallel batch jobs — always-on at under 40W total draw.</p>
-                </div>
+                </a>
 
-                <div class="project" onclick="window.location.href='laundry.html'">
+                <a class="project" href="laundry.html">
                     <span class="tag">Software</span>
                     <h3>Laundry Optimizer</h3>
                     <p>Statistical demand smoothing software using heat-map visualization and linear sorting to reduce machine contention in shared residential facilities.</p>
-                </div>
+                </a>
             </div>
         </section>
 
         <section id="leadership">
             <h2>Leadership.</h2>
-            <div class="project" onclick="window.location.href='inspirenc.html'">
+            <a class="project" href="inspirenc.html">
                 <span class="tag">Nonprofit</span>
                 <h3>InspireNC</h3>
                 <p>Director of a student-led nonprofit building STEM pathways in North Carolina. Institutional partnerships with the US Air Force, MetLife, and Lenovo.</p>
-            </div>
+            </a>
         </section>
 
         <section id="skills">
